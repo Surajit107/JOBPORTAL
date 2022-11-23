@@ -1,18 +1,19 @@
 import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { fetchAllJobs } from '../../../redux/slice/JobSlice'
-import Pagination from '../../common/Pagination'
 import image from '../../../assets/images/company-name.png'
+import CustomPagination from '../../common/CustomPagination'
+import { useDispatch, useSelector } from 'react-redux'
+import { fetchAllJobs } from '../../../redux/slice/JobSlice'
+
 
 const Cards = () => {
-
     const dispatch = useDispatch()
     const { fetch_job_data } = useSelector((state) => state.jobslice)
+
     useEffect(() => {
         dispatch(fetchAllJobs())
     }, [dispatch])
-    const joblist = fetch_job_data?.length
+    const jobData = fetch_job_data?.slice(0, 3).reverse()
 
     return (
         <div>
@@ -21,7 +22,7 @@ const Cards = () => {
                     <div className="row">
                         <div className="col-lg-6 offset-lg-3">
                             <div className="section-heading">
-                                <h2>{joblist} Jobs Listed</h2>
+                                <h2>{fetch_job_data?.length} Jobs Listed</h2>
                             </div>
                         </div>
                     </div>
@@ -29,7 +30,7 @@ const Cards = () => {
                     <ul className="job-listings mb-5">
 
                         {
-                            fetch_job_data?.map((curElm) => {
+                            jobData?.map((curElm) => {
                                 const { title, company, city, status, id } = curElm
                                 return (
                                     <li className="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center" key={id}>
@@ -57,15 +58,14 @@ const Cards = () => {
                                         </div>
                                     </li>
                                 )
-                            }).reverse().slice(0, 3)
+                            })
                         }
 
                     </ul>
 
                     <br />
-
-                    {/* *******Pagination******* */}
-                    <Pagination joblist={joblist} />
+                    {/******* Pagination *******/}
+                    <CustomPagination />
                 </div>
             </section>
         </div>

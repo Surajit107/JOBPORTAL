@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Pagination = ({ joblist }) => {
+const CustomPagination = ({ data }) => {
     return (
         <div>
             <div className="row pagination-wrap">
                 <div className="col-md-6 text-center text-md-left mb-4 mb-md-0">
-                    <span>Showing 1-{joblist} Of {joblist} Jobs</span>
+                    <span>Showing 1-{data?.length} Of {data?.length} Jobs</span>
                 </div>
                 <div className="col-md-6 text-center text-md-right">
                     <div className="custom-pagination ml-auto">
@@ -24,4 +24,4 @@ const Pagination = ({ joblist }) => {
     )
 }
 
-export default Pagination
+export default CustomPagination

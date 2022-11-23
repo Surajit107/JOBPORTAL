@@ -7,6 +7,7 @@ import ReadOurTestimonials from '../components/core/home/ReadOurTestimonials'
 import SendUsMsg from '../components/core/home/SendUsMsg'
 
 const Home = () => {
+
   return (
     <div>
 
@@ -19,7 +20,6 @@ const Home = () => {
       {/* Card section start */}
       <Cards />
       {/* Card section end */}
-
 
 
       {/* Read about us section start */}

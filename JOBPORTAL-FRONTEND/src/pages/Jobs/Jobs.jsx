@@ -1,19 +1,29 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import JobCard from "./JobCard";
 import Banner from "../../components/common/banners/Banner";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAllJobs } from "../../redux/slice/JobSlice";
+import ReactPaginate from 'react-paginate';
 
 
 const Jobs = () => {
+  const [pageNumber, setPageNumber] = useState(0)
   const dispatch = useDispatch()
   const { fetch_job_data } = useSelector((state) => state.jobslice)
 
   useEffect(() => {
     dispatch(fetchAllJobs())
-  }, [dispatch]);
+  }, [dispatch])
 
-  // console.log(fetch_job_data);
+  const userPerpage = 3
+  const pagesVisited = pageNumber * userPerpage
+  const jobData = fetch_job_data?.slice(pagesVisited, pagesVisited + userPerpage)
+  const pageCount = Math.ceil(fetch_job_data.length / userPerpage)
+
+  const changePage = (data) => {
+    // console.log(data);
+    setPageNumber(data.selected)
+  }
 
   return (
     <>
@@ -24,7 +34,7 @@ const Jobs = () => {
             <div className="row">
               <div className="col-lg-12">
                 <div className="row">
-                  {fetch_job_data?.map((jobItem) => {
+                  {jobData.map((jobItem) => {
                     return <JobCard {...jobItem} key={jobItem.id} />;
                   })}
                 </div>
@@ -32,37 +42,24 @@ const Jobs = () => {
             </div>
           </>
 
+          {/********* Pagination *********/}
           <nav>
-            <ul className="pagination pagination-lg justify-content-center">
-              <li className="page-item">
-                <a className="page-link" href="#!" aria-label="Previous">
-                  <span aria-hidden="true">&laquo;</span>
-                  <span className="sr-only">Previous</span>
-                </a>
-              </li>
-              <li className="page-item">
-                <a className="page-link" href="#!">
-                  1
-                </a>
-              </li>
-              <li className="page-item">
-                <a className="page-link" href="#!">
-                  2
-                </a>
-              </li>
-              <li className="page-item">
-                <a className="page-link" href="#!">
-                  3
-                </a>
-              </li>
-              <li className="page-item">
-                <a className="page-link" href="#!" aria-label="Next">
-                  <span aria-hidden="true">&raquo;</span>
-                  <span className="sr-only">Next</span>
-                </a>
-              </li>
-            </ul>
+            <ReactPaginate
+              previousLabel={"<"}
+              nextLabel={">"}
+              pageCount={pageCount}
+              onPageChange={changePage}
+              containerClassName={"pagination pagination-lg justify-content-center"}    //<ul> tag className
+              pageClassName={"page-item"}     //<li> tag className
+              pageLinkClassName={"page-link"}     //<a> tag className
+              previousClassName={"page-item"}     //className for previousLabel
+              previousLinkClassName={"page-link"}     //Link className for previousLabel
+              nextClassName={"page-item"}     //className for nextLabel
+              nextLinkClassName={"page-link"}     //Link className for nextLabel
+              activeClassName={"active"}
+            />
           </nav>
+
         </div>
       </section>
     </>
