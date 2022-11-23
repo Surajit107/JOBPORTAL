@@ -1,19 +1,29 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import image from '../../../assets/images/company-name.png'
-import CustomPagination from '../../common/CustomPagination'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchAllJobs } from '../../../redux/slice/JobSlice'
+import ReactPaginate from 'react-paginate'
 
 
 const Cards = () => {
+    const [pageNumber, setPageNumber] = useState(0)
     const dispatch = useDispatch()
     const { fetch_job_data } = useSelector((state) => state.jobslice)
 
     useEffect(() => {
         dispatch(fetchAllJobs())
     }, [dispatch])
-    const jobData = fetch_job_data?.slice(0, 3).reverse()
+
+    const userPerpage = 3
+    const pagesVisited = pageNumber * userPerpage
+    const jobData = fetch_job_data?.slice(pagesVisited, pagesVisited + userPerpage).reverse()
+    const pageCount = Math.ceil(fetch_job_data.length / userPerpage)
+
+    const changePage = (data) => {
+        // console.log(data);
+        setPageNumber(data.selected)
+    }
 
     return (
         <div>
@@ -62,10 +72,30 @@ const Cards = () => {
                         }
 
                     </ul>
-
                     <br />
+                    <br />
+
                     {/******* Pagination *******/}
-                    <CustomPagination />
+
+                    <div className="row pagination-wrap">
+                        <div className="col-md-6 text-center text-md-left mb-4 mb-md-0">
+                            <span>Showing 1-{fetch_job_data?.length} Of {fetch_job_data?.length} Jobs</span>
+                        </div>
+                        <div className="col-md-6 text-center text-md-right">
+                            <ReactPaginate
+                                previousLabel={"Prev"}
+                                nextLabel={"Next"}
+                                pageCount={pageCount}
+                                onPageChange={changePage}
+                                containerClassName={"row custom-pagination d-flex justify-content-end"}
+                                previousLinkClassName={"prev-next"}
+                                nextLinkClassName={"prev-next"}
+                                activeClassName={"active"}
+                                pageClassName={"home-page-item"}
+                                pageLinkClassName={"home-page-link"}
+                            />
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>

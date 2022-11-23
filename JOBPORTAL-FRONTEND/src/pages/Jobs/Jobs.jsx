@@ -45,8 +45,8 @@ const Jobs = () => {
           {/********* Pagination *********/}
           <nav>
             <ReactPaginate
-              previousLabel={"<"}
-              nextLabel={">"}
+              previousLabel={"Prev"}
+              nextLabel={"Next"}
               pageCount={pageCount}
               onPageChange={changePage}
               containerClassName={"pagination pagination-lg justify-content-center"}    //<ul> tag className

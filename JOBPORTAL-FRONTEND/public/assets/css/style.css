@@ -929,6 +929,18 @@ features
   border-color: #ed563b !important;
 }
 
+.custom-pagination .prev-next {
+  width: 50px;
+  height: 30px;
+  line-height: 30px;
+  display: inline-block;
+  border-radius: 10%;
+  border: 1px solid #dee2e6;
+  text-align: center;
+  margin: 0 5px;
+  text-decoration: none;
+}
+
 .custom-pagination a {
   width: 30px;
   height: 30px;
@@ -1577,6 +1589,12 @@ responsive
 .page-item.active .page-link {
   background-color: #ed563b !important;
   border-color: #ed563b !important;
+}
+
+.home-page-item.active .home-page-link {
+  background-color: #ed563b !important;
+  border-color: #ed563b !important;
+  color: #fff !important;
 }
 
 .btn-primary {
