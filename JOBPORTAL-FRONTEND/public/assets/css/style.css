@@ -924,9 +924,9 @@ features
 
 .custom-pagination a.active,
 .custom-pagination a:hover {
-  background: #ed563b;
+  background: #ed563b !important;
   color: #fff;
-  border-color: #ed563b;
+  border-color: #ed563b !important;
 }
 
 .custom-pagination a {
@@ -1572,6 +1572,11 @@ responsive
 
 .pagination-lg .page-link {
   color: #ed563b;
+}
+
+.page-item.active .page-link {
+  background-color: #ed563b !important;
+  border-color: #ed563b !important;
 }
 
 .btn-primary {

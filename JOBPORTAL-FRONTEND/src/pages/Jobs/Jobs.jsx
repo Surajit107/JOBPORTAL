@@ -35,7 +35,7 @@ const Jobs = () => {
               <div className="col-lg-12">
                 <div className="row">
                   {jobData.map((jobItem) => {
-                    return <JobCard {...jobItem} key={jobItem.id} />;
+                    return <JobCard {...jobItem} key={jobItem.id} />
                   })}
                 </div>
               </div>
