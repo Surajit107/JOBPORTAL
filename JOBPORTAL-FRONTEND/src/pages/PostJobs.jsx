@@ -44,16 +44,354 @@ const PostJobs = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const [formValue, setFormValue] = useState(initialState)
+  const [error, setError] = useState({});
 
-  const handleChange = (e) => {
-    setFormValue({ ...formValue, [e.target.name]: e.target.value })
+  // Form Validation
+  const validation = () => {
+    let error = {}
+    // for email validate check
+    const regex = /^([a-zA-Z0-9-.]+)@([a-z]{2,12}).([a-z]{2,4})(.[a-z]{2,4})?$/;
+
+    if (!formValue.title) {
+      error.title = "Title is Required*";
+    }
+    if (!formValue.category_1) {
+      error.category_1 = "Kindly Mention Category One*";
+    }
+    if (!formValue.category_2) {
+      error.category_2 = "Kindly Mention Category Two*";
+    }
+    if (!formValue.company) {
+      error.company = "Company is Required*";
+    }
+    if (!formValue.city) {
+      error.city = "City is Required*";
+    }
+    if (!formValue.status) {
+      error.status = "Status is Required*";
+    }
+
+    if (!formValue.name) {
+      error.name = "Name is Required*";
+    }
+
+    if (!formValue.phone) {
+      error.phone = "Phone Number is Required*";
+    }
+
+    if (!formValue.email) {
+      error.email = "Email is Required";
+    } else if (!regex.test(formValue.email)) {
+      error.email = "Enter a valid Email";
+    }
+
+    if (!formValue.vacancy) {
+      error.vacancy = "Vacancy Must be Mentioned*";
+    }
+
+    if (!formValue.exp) {
+      error.exp = "Experience Must be Mentioned*";
+    }
+
+    if (!formValue.salary_min) {
+      error.salary_min = "Minimum Salary Must be Mentioned*";
+    }
+
+    if (!formValue.salary_max) {
+      error.salary_max = "Maximum Salary Must be Mentioned*";
+    }
+
+    if (!formValue.gender) {
+      error.gender = "Gender Must be Mentioned*";
+    }
+
+    if (!formValue.deadline) {
+      error.deadline = "Deadline Must be Mentioned*";
+    }
+
+    if (!formValue.website) {
+      error.website = "Website Must be Mentioned*";
+    }
+
+    if (!formValue.about) {
+      error.about = "About Must be Mentioned*";
+    }
+
+    if (!formValue.desc) {
+      error.desc = "Description is Required*";
+    }
+
+    if (!formValue.resp) {
+      error.resp = "Responsibilities Must be Mentioned*";
+    }
+
+    if (!formValue.edu) {
+      error.edu = "Education is Required*";
+    }
+
+    if (!formValue.others) {
+      error.others = "Please Mention Something*";
+    }
+
+    return error;
+
   }
+
+  // onChange=>
+  const handleChange = (e) => {
+    let name, value;
+    name = e.target.name
+    value = e.target.value
+    // title
+    if (name === "title") {
+      if (value.length === 0) {
+        setError({ ...error, title: "Title is Required*" });
+        setFormValue({ ...formValue, title: "" })
+      } else {
+        setError({ ...error, title: "" })
+        setFormValue({ ...formValue, title: value })
+      }
+    }
+    // category_1
+    if (name === "category_1") {
+      if (value.length === 0) {
+        setError({ ...error, category_1: "First category is Required*" });
+        setFormValue({ ...formValue, category_1: "" })
+      } else {
+        setError({ ...error, category_1: "" })
+        setFormValue({ ...formValue, category_1: value })
+      }
+    }
+    // category_2
+    if (name === "category_2") {
+      if (value.length === 0) {
+        setError({ ...error, category_2: "Second category is aslo Required*" });
+        setFormValue({ ...formValue, category_2: "" })
+      } else {
+        setError({ ...error, category_2: "" })
+        setFormValue({ ...formValue, category_2: value })
+      }
+    }
+    // company
+    if (name === "company") {
+      if (value.length === 0) {
+        setError({ ...error, company: "Company is Required*" });
+        setFormValue({ ...formValue, company: "" })
+      } else {
+        setError({ ...error, company: "" })
+        setFormValue({ ...formValue, company: value })
+      }
+    }
+    // city
+    if (name === "city") {
+      if (value.length === 0) {
+        setError({ ...error, city: "City is Required*" });
+        setFormValue({ ...formValue, city: "" })
+      } else {
+        setError({ ...error, city: "" })
+        setFormValue({ ...formValue, city: value })
+      }
+    }
+    // status
+    if (name === "status") {
+      if (value.length === 0) {
+        setError({ ...error, status: "status is Required*" });
+        setFormValue({ ...formValue, status: "" })
+      } else {
+        setError({ ...error, status: "" })
+        setFormValue({ ...formValue, status: value })
+      }
+    }
+    // name
+    if (name === "name") {
+      if (value.length === 0) {
+        setError({ ...error, name: "name is Required*" });
+        setFormValue({ ...formValue, name: "" })
+      } else {
+        setError({ ...error, name: "" })
+        setFormValue({ ...formValue, name: value })
+      }
+    }
+    // phone
+    if (name === "phone") {
+      if (value.length === 0) {
+        setError({ ...error, phone: "phone is Required*" });
+        setFormValue({ ...formValue, phone: "" })
+      } else {
+        setError({ ...error, phone: "" })
+        setFormValue({ ...formValue, phone: value })
+      }
+    }
+    // email
+    if (name === "email") {
+      if (value.length === 0) {
+        setError({ ...error, email: "Email is Required*" });
+        setFormValue({ ...formValue, email: "" })
+      } else {
+        setError({ ...error, email: "" })
+        setFormValue({ ...formValue, email: value })
+      }
+    }
+    // vacancy
+    if (name === "vacancy") {
+      if (value.length === 0) {
+        setError({ ...error, vacancy: "Vacancy is Required*" });
+        setFormValue({ ...formValue, vacancy: "" })
+      } else {
+        setError({ ...error, vacancy: "" })
+        setFormValue({ ...formValue, vacancy: value })
+      }
+    }
+    // exp
+    if (name === "exp") {
+      if (value.length === 0) {
+        setError({ ...error, exp: "Experience is Required*" });
+        setFormValue({ ...formValue, exp: "" })
+      } else {
+        setError({ ...error, exp: "" })
+        setFormValue({ ...formValue, exp: value })
+      }
+    }
+    // salary_min
+    if (name === "salary_min") {
+      if (value.length === 0) {
+        setError({ ...error, salary_min: "Min. salary is Required*" });
+        setFormValue({ ...formValue, salary_min: "" })
+      } else {
+        setError({ ...error, salary_min: "" })
+        setFormValue({ ...formValue, salary_min: value })
+      }
+    }
+    // salary_max
+    if (name === "salary_max") {
+      if (value.length === 0) {
+        setError({ ...error, salary_max: "Max. salary is Required*" });
+        setFormValue({ ...formValue, salary_max: "" })
+      } else {
+        setError({ ...error, salary_max: "" })
+        setFormValue({ ...formValue, salary_max: value })
+      }
+    }
+    // gender
+    if (name === "gender") {
+      if (value.length === 0) {
+        setError({ ...error, gender: "Gender is Required*" });
+        setFormValue({ ...formValue, gender: "" })
+      } else {
+        setError({ ...error, gender: "" })
+        setFormValue({ ...formValue, gender: value })
+      }
+    }
+    // deadline
+    if (name === "deadline") {
+      if (value.length === 0) {
+        setError({ ...error, deadline: "Deadline is Required*" });
+        setFormValue({ ...formValue, deadline: "" })
+      } else {
+        setError({ ...error, deadline: "" })
+        setFormValue({ ...formValue, deadline: value })
+      }
+    }
+    // website
+    if (name === "website") {
+      if (value.length === 0) {
+        setError({ ...error, website: "Website is Required*" });
+        setFormValue({ ...formValue, website: "" })
+      } else {
+        setError({ ...error, website: "" })
+        setFormValue({ ...formValue, website: value })
+      }
+    }
+    // about
+    if (name === "about") {
+      if (value.length === 0) {
+        setError({ ...error, about: "About is Required*" });
+        setFormValue({ ...formValue, about: "" })
+      } else {
+        setError({ ...error, about: "" })
+        setFormValue({ ...formValue, about: value })
+      }
+    }
+    // desc
+    if (name === "desc") {
+      if (value.length === 0) {
+        setError({ ...error, desc: "Description is Required*" });
+        setFormValue({ ...formValue, desc: "" })
+      } else {
+        setError({ ...error, desc: "" })
+        setFormValue({ ...formValue, desc: value })
+      }
+    }
+    // resp
+    if (name === "resp") {
+      if (value.length === 0) {
+        setError({ ...error, resp: "Responsibility is Required*" });
+        setFormValue({ ...formValue, resp: "" })
+      } else {
+        setError({ ...error, resp: "" })
+        setFormValue({ ...formValue, resp: value })
+      }
+    }
+    // edu
+    if (name === "edu") {
+      if (value.length === 0) {
+        setError({ ...error, edu: "Education is Required*" });
+        setFormValue({ ...formValue, edu: "" })
+      } else {
+        setError({ ...error, edu: "" })
+        setFormValue({ ...formValue, edu: value })
+      }
+    }
+    // others
+    if (name === "others") {
+      if (value.length === 0) {
+        setError({ ...error, others: "Others is Required*" });
+        setFormValue({ ...formValue, others: "" })
+      } else {
+        setError({ ...error, others: "" })
+        setFormValue({ ...formValue, others: value })
+      }
+    }
+  }
+
+
+  // onSubmit=>
   const handleSubmit = (e) => {
     e.preventDefault()
   }
+  // onClick=>
   const onButtonClick = () => {
-    dispatch(fetchPostJobs(formValue))
-    navigate('/')
+    const ErrorList = validation()
+    setError(validation())
+    if (Object.keys(ErrorList).length === 0) {
+      let reg = {
+        title: formValue.title,
+        category_1: formValue.category_1,
+        category_2: formValue.category_2,
+        company: formValue.company,
+        password: formValue.password,
+        city: formValue.city,
+        status: formValue.status,
+        name: formValue.name,
+        phone: formValue.phone,
+        email: formValue.email,
+        vacancy: formValue.vacancy,
+        exp: formValue.exp,
+        salary_min: formValue.salary_min,
+        salary_max: formValue.salary_max,
+        gender: formValue.gender,
+        deadline: formValue.deadline,
+        website: formValue.website,
+        about: formValue.about,
+        desc: formValue.desc,
+        resp: formValue.resp,
+        edu: formValue.edu,
+        others: formValue.others,
+      }
+      dispatch(fetchPostJobs(reg))
+      navigate('/')
+      alert("Data submitted successfully !!!")
+    }
   }
 
   return (
@@ -83,6 +421,7 @@ const PostJobs = () => {
 
                     <div className="col-md-4 col-sm-12">
                       <fieldset>
+                        <span className="text-danger">{error.title}</span>
                         <input
                           name="title"
                           type="text"
@@ -96,6 +435,7 @@ const PostJobs = () => {
 
                     <div className="col-md-4 col-sm-12">
                       <fieldset>
+                        <span className="text-danger">{error.company}</span>
                         <input
                           name="company"
                           type="text"
@@ -109,6 +449,7 @@ const PostJobs = () => {
 
                     <div className="col-md-4 col-sm-12">
                       <fieldset>
+                        <span className="text-danger">{error.name}</span>
                         <input
                           name="name"
                           type="text"
@@ -122,6 +463,7 @@ const PostJobs = () => {
 
                     <div className="col-md-4 col-sm-12">
                       <fieldset>
+                        <span className="text-danger">{error.email}</span>
                         <input
                           name="email"
                           type="email"
@@ -135,6 +477,7 @@ const PostJobs = () => {
 
                     <div className="col-md-4 col-sm-12">
                       <fieldset>
+                        <span className="text-danger">{error.phone}</span>
                         <input
                           name="phone"
                           type="tel"
@@ -148,6 +491,7 @@ const PostJobs = () => {
 
                     <div className="col-md-4 col-sm-12">
                       <fieldset>
+                        <span className="text-danger">{error.status}</span>
                         <input
                           name="status"
                           type="text"
@@ -161,6 +505,7 @@ const PostJobs = () => {
 
                     <div className="col-md-4 col-sm-12">
                       <fieldset>
+                        <span className="text-danger">{error.city}</span>
                         <input
                           name="city"
                           type="text"
@@ -174,6 +519,7 @@ const PostJobs = () => {
 
                     <div className="col-md-4 col-sm-12">
                       <fieldset>
+                        <span className="text-danger">{error.vacancy}</span>
                         <input
                           name="vacancy"
                           type="text"
@@ -187,6 +533,7 @@ const PostJobs = () => {
 
                     <div className="col-md-4 col-sm-12">
                       <fieldset>
+                        <span className="text-danger">{error.exp}</span>
                         <input
                           name="exp"
                           type="text"
@@ -200,6 +547,7 @@ const PostJobs = () => {
 
                     <div className="col-md-4 col-sm-12">
                       <fieldset>
+                        <span className="text-danger">{error.salary_min}</span>
                         <input
                           name="salary_min"
                           type="text"
@@ -213,6 +561,7 @@ const PostJobs = () => {
 
                     <div className="col-md-4 col-sm-12">
                       <fieldset>
+                        <span className="text-danger">{error.salary_max}</span>
                         <input
                           name="salary_max"
                           type="text"
@@ -226,6 +575,7 @@ const PostJobs = () => {
 
                     <div className="col-md-4 col-sm-12">
                       <fieldset>
+                        <span className="text-danger">{error.category_1}</span>
                         <input
                           name="category_1"
                           type="text"
@@ -239,6 +589,7 @@ const PostJobs = () => {
 
                     <div className="col-md-4 col-sm-12">
                       <fieldset>
+                        <span className="text-danger">{error.category_2}</span>
                         <input
                           name="category_2"
                           type="text"
@@ -252,6 +603,7 @@ const PostJobs = () => {
 
                     <div className="col-md-4 col-sm-12">
                       <fieldset>
+                        <span className="text-danger">{error.gender}</span>
                         <input
                           name="gender"
                           type="text"
@@ -265,6 +617,7 @@ const PostJobs = () => {
 
                     <div className="col-md-4 col-sm-12">
                       <fieldset>
+                        <span className="text-danger">{error.website}</span>
                         <input
                           name="website"
                           type="text"
@@ -278,6 +631,7 @@ const PostJobs = () => {
 
                     <div className="col-md-4 col-sm-12">
                       <fieldset>
+                        <span className="text-danger">{error.deadline}</span>
                         <input
                           name="deadline"
                           type="text"
@@ -291,6 +645,7 @@ const PostJobs = () => {
 
                     <div className="col-lg-12">
                       <fieldset>
+                        <span className="text-danger">{error.desc}</span>
                         <textarea
                           name="desc"
                           rows="12"
@@ -304,6 +659,7 @@ const PostJobs = () => {
 
                     <div className="col-lg-12">
                       <fieldset>
+                        <span className="text-danger">{error.about}</span>
                         <textarea
                           name="about"
                           rows="12"
@@ -317,6 +673,7 @@ const PostJobs = () => {
 
                     <div className="col-lg-12">
                       <fieldset>
+                        <span className="text-danger">{error.resp}</span>
                         <textarea
                           name="resp"
                           rows="12"
@@ -330,6 +687,7 @@ const PostJobs = () => {
 
                     <div className="col-lg-12">
                       <fieldset>
+                        <span className="text-danger">{error.edu}</span>
                         <textarea
                           name="edu"
                           rows="12"
@@ -343,6 +701,7 @@ const PostJobs = () => {
 
                     <div className="col-lg-12">
                       <fieldset>
+                        <span className="text-danger">{error.others}</span>
                         <textarea
                           name="others"
                           rows="12"

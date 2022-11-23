@@ -18,7 +18,7 @@ const Cards = () => {
     const userPerpage = 3
     const pagesVisited = pageNumber * userPerpage
     const jobData = fetch_job_data?.slice(pagesVisited, pagesVisited + userPerpage).reverse()
-    const pageCount = Math.ceil(fetch_job_data.length / userPerpage)
+    const pageCount = Math.ceil(fetch_job_data?.length / userPerpage)
 
     const changePage = (data) => {
         // console.log(data);

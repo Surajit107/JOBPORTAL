@@ -105,7 +105,7 @@ const SignUp = () => {
     e.preventDefault()
   }
 
-  
+
   // onClick=>
   const onButtonClick = () => {
     const ErrorList = validation()
