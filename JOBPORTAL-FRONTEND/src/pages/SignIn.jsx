@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import Banner from '../components/common/banners/Banner'
 import { fetchSignIn } from '../redux/slice/AuthSlice'
@@ -13,7 +13,6 @@ const SignIn = () => {
   const [formValue, setFormValue] = useState(initialState)
   const dispatch = useDispatch()
   const navigate = useNavigate()
-  const { token } = useSelector((state) => state.authslice)
 
   const handleChange = (e) => {
     setFormValue({ ...formValue, [e.target.name]: e.target.value })
@@ -26,11 +25,7 @@ const SignIn = () => {
   const onButtonClick = () => {
     dispatch(fetchSignIn(formValue))
     setFormValue(initialState)
-    if (token) {
-      alert("Successfully Logged In !!")
-    } else {
-      alert("Invalid Email or Password !!")
-    }
+    alert("Successfully Logged In !!")
     navigate("/")
   }
 
