@@ -1,6 +1,5 @@
-import React from 'react'
-import HomeBanner from '../components/common/banners/HomeBanner'
-import Cards from '../components/core/home/Cards'
+import React from 'react';
+import BannerAndCards from '../components/core/home/BannerAndCards'
 import ReadAboutUs from '../components/core/home/ReadAboutUs'
 import ReadOurBlogs from '../components/core/home/ReadOurBlogs'
 import ReadOurTestimonials from '../components/core/home/ReadOurTestimonials'
@@ -11,14 +10,8 @@ const Home = () => {
   return (
     <div>
 
-      {/* Banner section start */}
-      <HomeBanner />
-      {/* Banner section end */}
-
-
-
       {/* Card section start */}
-      <Cards />
+      <BannerAndCards />
       {/* Card section end */}
 
 

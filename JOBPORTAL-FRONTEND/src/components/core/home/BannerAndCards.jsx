@@ -6,7 +6,9 @@ import { fetchAllJobs } from '../../../redux/slice/JobSlice'
 import ReactPaginate from 'react-paginate'
 
 
-const Cards = () => {
+const BannerAndCards = () => {
+
+    const [search, setSearch] = useState("")
     const [pageNumber, setPageNumber] = useState(0)
     const dispatch = useDispatch()
     const { fetch_job_data } = useSelector((state) => state.jobslice)
@@ -22,12 +24,57 @@ const Cards = () => {
     const pageCount = Math.ceil(fetch_job_data?.length / userPerpage)
 
     const changePage = (data) => {
-        // console.log(data);
         setPageNumber(data.selected)
     }
 
+
     return (
         <div>
+
+            {/* <!-- ***** Main Banner Area Start ***** --> */}
+
+            <div className="main-banner" id="top">
+                <video autoPlay muted loop id="bg-video">
+                    <source src="assets/images/video.mp4" type="video/mp4" />
+                </video>
+
+                <div className="video-overlay header-text">
+                    <div className="caption">
+                        <h6>Surajit's Job Portal</h6>
+                        <h2>Find the perfect <em>Job</em></h2>
+                        <div className="main-button">
+                            <form method="post" className="search-jobs-form">
+                                <div className="row mb-5">
+                                    <div className="col-8 ml-5">
+                                        <input
+                                            type="text"
+                                            value={search}
+                                            onChange={(e) => setSearch(e.target.value)}
+                                            className="form-control form-control-lg"
+                                            placeholder="Search Job title..."
+                                            style={{ "width": "52vw", "marginLeft": "80px" }}
+                                        />
+                                    </div>
+                                    <div>
+                                        <button type="submit"
+                                            className="btn btn-primary btn-lg btn-block text-white btn-search"
+                                            style={{ "width": "5vw", "marginLeft": "80px" }}><span
+                                                className=" mr-2"><i className="fa fa-search" aria-hidden="true"></i></span></button>
+                                    </div>
+                                </div>
+
+                            </form>
+                            <Link to="/contact">Contact Us</Link>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* <!-- ***** Main Banner Area End ***** --> */}
+
+
+            {/* <!-- ***** Cards Area Start ***** --> */}
+
             <section className="section" id="trainers">
                 <div className="container">
                     <div className="row">
@@ -41,7 +88,12 @@ const Cards = () => {
                     <ul className="job-listings mb-5">
 
                         {
-                            jobData?.map((curElm) => {
+                            jobData?.filter((jobs) => {
+                                if (search === "") {
+                                    return jobs;
+                                }
+                                return (jobs.title.toLowerCase().includes(search.toLowerCase()));
+                            }).map((curElm) => {
                                 const { title, company, city, status, id } = curElm
                                 return (
                                     <li className="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center" key={id}>
@@ -78,7 +130,9 @@ const Cards = () => {
                     <br />
                     <br />
 
-                    {/******* Pagination *******/}
+                    {/* <!-- ***** Cards Area Ends ***** --> */}
+
+                    {/******* Pagination Start *******/}
 
                     <div className="row pagination-wrap">
                         <div className="col-md-6 text-center text-md-left mb-4 mb-md-0">
@@ -99,10 +153,13 @@ const Cards = () => {
                             />
                         </div>
                     </div>
+
+                    {/******* Pagination End *******/}
+
                 </div>
             </section>
         </div>
     )
 }
 
-export default Cards
+export default BannerAndCards
