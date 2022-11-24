@@ -92,7 +92,7 @@ const SignUp = () => {
 
   return (
     <div>
-      <Banner string="Create Your Account &" page="Sign Up" />
+      <Banner string="New In Job Agency? " page="Join Now" />
       <section className="section" id="contact-us" style={{ "marginTop": "0" }}>
         <div className="container">
           <div className="row d-flex justify-content-center">
