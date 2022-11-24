@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { CURRENCY } from "../../baseUrl/common";
+import image from "../../assets/images/blog-image-2-940x460.jpg"
+
 const JobCard = (props) => {
-  const { title, salary_min, category_1, category_2, id, image } = props;
+  const { title, salary_min, category_1, category_2, id } = props;
   return (
     <div className="col-md-4 mt-4">
       <div className="trainer-item">

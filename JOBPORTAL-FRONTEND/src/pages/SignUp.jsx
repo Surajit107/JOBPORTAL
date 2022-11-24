@@ -6,8 +6,6 @@ import { fetchSignUp } from '../redux/slice/SignUpSlice'
 
 const initialState = {
   email: "",
-  mobile: "",
-  username: "",
   password: ""
 }
 
@@ -24,14 +22,6 @@ const SignUp = () => {
     // for email validate check
     const regex = /^([a-zA-Z0-9-.]+)@([a-z]{2,12}).([a-z]{2,4})(.[a-z]{2,4})?$/;
 
-    if (!formValue.username) {
-      error.username = "Username is Required*";
-    }
-
-    if (!formValue.mobile) {
-      error.mobile = "Mobile Number is Required*";
-    }
-
     if (!formValue.email) {
       error.email = "Email is Required";
     } else if (!regex.test(formValue.email)) {
@@ -42,7 +32,7 @@ const SignUp = () => {
       error.password = "Password is Required";
     } else if (formValue.password.length < 3) {
       error.password = "Password must be more than 3 characters*";
-    } else if (formValue.password.length > 8) {
+    } else if (formValue.password.length > 10) {
       error.password = "Password must be less than 8 characters*";
     }
     return error;
@@ -54,28 +44,7 @@ const SignUp = () => {
     let name, value;
     name = e.target.name
     value = e.target.value
-    // username
-    if (name === "username") {
-      if (value.length === 0) {
-        setError({ ...error, username: "Username is Required*" });
-        setFormValue({ ...formValue, username: "" })
-      } else {
-        setError({ ...error, username: "" })
-        setFormValue({ ...formValue, username: value })
-      }
-    }
-
-    // mobile
-    if (name === "mobile") {
-      if (value.length === 0) {
-        setError({ ...error, mobile: "Mobile Number is Required*" });
-        setFormValue({ ...formValue, mobile: "" })
-      } else {
-        setError({ ...error, mobile: "" })
-        setFormValue({ ...formValue, mobile: value })
-      }
-    }
-
+    
     // email
     if (name === "email") {
       if (value.length === 0) {
@@ -112,9 +81,7 @@ const SignUp = () => {
     setError(validation())
     if (Object.keys(ErrorList).length === 0) {
       let reg = {
-        username: formValue.username,
         email: formValue.email,
-        mobile: formValue.mobile,
         password: formValue.password
       }
       dispatch(fetchSignUp(reg))
@@ -147,35 +114,6 @@ const SignUp = () => {
                           type="email"
                           placeholder="Enter a valid email ID*"
                           value={formValue.email}
-                          onChange={handleChange} />
-                      </fieldset>
-                    </div>
-
-                    {/* *****Phone***** */}
-
-                    <div className="col-md-12 col-sm-12">
-                      <fieldset>
-                        <span className="text-danger">{error.mobile}</span>
-                        <input
-                          name="mobile"
-                          type="tel"
-                          placeholder="Enter a valid mobile number*"
-                          maxLength={10}
-                          value={formValue.mobile}
-                          onChange={handleChange} />
-                      </fieldset>
-                    </div>
-
-                    {/* *****User Name***** */}
-
-                    <div className="col-md-12 col-sm-12">
-                      <fieldset>
-                        <span className="text-danger">{error.username}</span>
-                        <input
-                          name="username"
-                          type="text"
-                          placeholder="Enter a username*"
-                          value={formValue.username}
                           onChange={handleChange} />
                       </fieldset>
                     </div>

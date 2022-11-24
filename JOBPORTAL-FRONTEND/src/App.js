@@ -10,11 +10,11 @@ import Blog from "./pages/Blog";
 import Testimonials from "./pages/Testimonials";
 import PostJobs from "./pages/PostJobs";
 import Contact from "./pages/Contact";
-import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import JobDetails from "./pages/JobDetails";
 import JobSingle from "./pages/JobSingle/JobSingle";
 import BlogDetails from "./pages/BlogDetails";
+import SignIn from "./pages/SignIn";
 
 function App() {
   return (
@@ -33,7 +33,7 @@ function App() {
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/postjobs" element={<PostJobs />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
         </Routes>
         <Footer />

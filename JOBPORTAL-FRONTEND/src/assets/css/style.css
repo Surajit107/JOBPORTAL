@@ -930,7 +930,7 @@ features
 }
 
 .custom-pagination .prev-next {
-  width: 50px;
+  width: 40px;
   height: 30px;
   line-height: 30px;
   display: inline-block;
@@ -939,6 +939,7 @@ features
   text-align: center;
   margin: 0 5px;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .custom-pagination a {
@@ -951,6 +952,7 @@ features
   text-align: center;
   margin: 0 5px;
   text-decoration: none;
+  cursor: pointer;
 }
 
 /*

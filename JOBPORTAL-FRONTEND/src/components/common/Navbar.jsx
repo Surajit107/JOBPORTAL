@@ -11,7 +11,7 @@ const Navbar = () => {
                         <div className="col-12">
                             <nav className="main-nav">
                                 {/* <!-- ***** Logo Start ***** --> */}
-                                <Link to="/" className="logo">Surajit's <em>Agency</em></Link>
+                                <Link to="/" className="logo">Job <em>Agency</em></Link>
                                 {/* <!-- ***** Logo End ***** --> */}
                                 {/* <!-- ***** Menu Start ***** --> */}
                                 <ul className="nav">
@@ -30,7 +30,7 @@ const Navbar = () => {
                                     </li>
                                     <li><Link to="/postjobs">Post Jobs</Link></li>
                                     <li><Link to="/contact">Contact</Link></li>
-                                    <li><Link to="/login">Login</Link></li>
+                                    <li><Link to="/signin">Sign In</Link></li>
                                     <li><Link to="/signup">Sign Up</Link></li>
                                 </ul>
                                 <a className='menu-trigger' href="!#">

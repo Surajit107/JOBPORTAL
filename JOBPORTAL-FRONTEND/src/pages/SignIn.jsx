@@ -1,10 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Banner from '../components/common/banners/Banner'
 
-const Login = () => {
+const SignIn = () => {
   return (
     <div>
-      <Banner string="Please" page="Login" />
+      <Banner string="Please" page="Sign In" />
 
       <section className="section" id="contact-us" style={{ "marginTop": "0" }}>
         <div className="container">
@@ -13,15 +14,15 @@ const Login = () => {
               <div className="contact-form">
                 <form>
 
-                  {/* *****User Name***** */}
+                  {/* *****Email***** */}
 
                   <div className="row">
                     <div className="col-md-12 col-sm-12">
                       <fieldset>
                         <input
-                          name="username"
-                          type="text"
-                          placeholder="Username*" />
+                          name="email"
+                          type="email"
+                          placeholder="Email*" />
                       </fieldset>
                     </div>
 
@@ -37,8 +38,10 @@ const Login = () => {
                     </div>
 
                     <div className="col-lg-12 d-flex justify-content-center">
-                      <fieldset>
-                        <button type="submit" id="form-submit" className="main-button">Login</button>
+                      <fieldset className='d-flex justify-content-center flex-column'>
+                        <button className="main-button ml-5" style={{ "width": "100px" }}>Sign In</button>
+                        <Link to="/signup" className='text-center mt-3'><u>New In Job
+                          Agency? Join now</u></Link>
                       </fieldset>
                     </div>
                   </div>
@@ -52,4 +55,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default SignIn
