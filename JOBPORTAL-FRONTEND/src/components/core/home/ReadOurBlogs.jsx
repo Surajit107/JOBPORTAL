@@ -6,6 +6,7 @@ import { fetchAllBlogs } from '../../../redux/slice/BlogsSlice'
 const ReadOurBlogs = () => {
     const dispatch = useDispatch()
     const { blog_data } = useSelector((state) => state.blogslice)
+    const { token } = useSelector((state) => state.authslice)
     useEffect(() => {
         dispatch(fetchAllBlogs())
     }, [dispatch])
@@ -35,7 +36,9 @@ const ReadOurBlogs = () => {
                                     )
                                 }).reverse().slice(0, 3)
                             }
-                            <div className="main-rounded-button mt-2"><Link to="/blog">Read More</Link></div>
+                            <div className="main-rounded-button mt-2">
+                                {token ? <Link to="/blog">Read More</Link> : null}
+                            </div>
                         </div>
                         <div className="col-lg-8">
                             {
@@ -50,12 +53,14 @@ const ReadOurBlogs = () => {
 
                                                 <p>{curElm.description}</p>
                                                 <div className="main-button">
-                                                    <Link to={`/blogdetails/${curElm.id}`}>Continue Reading</Link>
+                                                    {token ?
+                                                        <Link to={`/blogdetails/${curElm.id}`}>Continue Reading</Link>
+                                                        : null}
                                                 </div>
                                             </article>
                                         </section>
                                     )
-                                }).reverse().slice(0,1)
+                                }).reverse().slice(0, 1)
                             }
                         </div>
                     </div>

@@ -10,6 +10,7 @@ const Cards = () => {
     const [pageNumber, setPageNumber] = useState(0)
     const dispatch = useDispatch()
     const { fetch_job_data } = useSelector((state) => state.jobslice)
+    const { token } = useSelector((state) => state.authslice)
 
     useEffect(() => {
         dispatch(fetchAllJobs())
@@ -44,7 +45,9 @@ const Cards = () => {
                                 const { title, company, city, status, id } = curElm
                                 return (
                                     <li className="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center" key={id}>
-                                        <Link to={`/jobsingle/${id}`} className='p-2'></Link>
+                                        {token ?
+                                            <Link to={`/jobsingle/${id}`} className='p-2'></Link>
+                                            : null}
                                         <div className="job-listing-logo">
                                             <script type="text/javascript" async=""
                                                 src="https://www.google-analytics.com/analytics.js">
