@@ -42,8 +42,8 @@ const BannerAndCards = () => {
                     <div className="caption">
                         <h6>Surajit's Job Portal</h6>
                         <h2>Find the perfect <em>Job</em></h2>
-                        <div className="main-button">
-                            <form method="post" className="search-jobs-form">
+                        <div className="main-button mt-5">
+                            <form className="search-jobs-form" onSubmit={(e) => e.preventDefault()}>
                                 <div className="row mb-5">
                                     <div className="col-8 ml-5">
                                         <input
@@ -56,10 +56,9 @@ const BannerAndCards = () => {
                                         />
                                     </div>
                                     <div>
-                                        <button type="submit"
-                                            className="btn btn-primary btn-lg btn-block text-white btn-search"
+                                        <a href='#jobs-container' className="btn btn-primary btn-lg btn-block text-white btn-search"
                                             style={{ "width": "5vw", "marginLeft": "80px" }}><span
-                                                className=" mr-2"><i className="fa fa-search" aria-hidden="true"></i></span></button>
+                                                className=" mr-2"><i className="fa fa-search" aria-hidden="true"></i></span></a>
                                     </div>
                                 </div>
 
@@ -76,7 +75,7 @@ const BannerAndCards = () => {
             {/* <!-- ***** Cards Area Start ***** --> */}
 
             <section className="section" id="trainers">
-                <div className="container">
+                <div className="container" id="jobs-container">
                     <div className="row">
                         <div className="col-lg-6 offset-lg-3">
                             <div className="section-heading">
@@ -92,8 +91,11 @@ const BannerAndCards = () => {
                                 if (search === "") {
                                     return jobs;
                                 }
-                                return (jobs.title.toLowerCase().includes(search.toLowerCase()));
-                            }).map((curElm) => {
+                                return (
+                                    jobs.title.toLowerCase().includes(search.toLowerCase())
+                                )
+                            })
+                            .map((curElm) => {
                                 const { title, company, city, status, id } = curElm
                                 return (
                                     <li className="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center" key={id}>
