@@ -11,7 +11,6 @@ export const fetchPostJobs = createAsyncThunk("/jobs", async (formData) => {
 })
 
 const initialState = {
-    form_data: [],
     form_status: "idle"
 }
 
@@ -23,8 +22,7 @@ export const PostJobSlice = createSlice({
         builder.addCase(fetchPostJobs.pending, (state) => {
             state.form_status = "Loading..."
         })
-        builder.addCase(fetchPostJobs.fulfilled, (state, action) => {
-            state.form_data = action.payload
+        builder.addCase(fetchPostJobs.fulfilled, (state) => {
             state.form_status = "Resolved"
         })
         builder.addCase(fetchPostJobs.rejected, (state) => {

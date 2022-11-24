@@ -3,7 +3,7 @@ import { BlogSlice } from "../slice/BlogsSlice";
 import { ContactSlice } from "../slice/ContactSlice";
 import { JobSlice } from "../slice/JobSlice";
 import { PostJobSlice } from "../slice/PostJobSlice";
-import { SignUpSlice } from "../slice/SignUpSlice";
+import AuthSlice from "../slice/AuthSlice";
 import { SingleBlogSlice } from "../slice/SingleBlogSlice";
 import { SingleJobSlice } from "../slice/SingleJobSlice";
 
@@ -15,6 +15,6 @@ export const Store = configureStore({
         singleblogslice: SingleBlogSlice.reducer,
         contactslice: ContactSlice.reducer,
         postjobslice: PostJobSlice.reducer,
-        signupslice: SignUpSlice.reducer
+        authslice: AuthSlice
     }
 })

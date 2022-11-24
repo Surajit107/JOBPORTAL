@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import Banner from '../components/common/banners/Banner'
-import { fetchSignUp } from '../redux/slice/SignUpSlice'
+import { fetchSignUp } from '../redux/slice/AuthSlice'
 
 const initialState = {
+  user: "",
   email: "",
   password: ""
 }
@@ -13,7 +14,7 @@ const SignUp = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const [formValue, setFormValue] = useState(initialState)
-  const [error, setError] = useState({});
+  const [error, setError] = useState({})
 
 
   // Form Validation
@@ -22,29 +23,43 @@ const SignUp = () => {
     // for email validate check
     const regex = /^([a-zA-Z0-9-.]+)@([a-z]{2,12}).([a-z]{2,4})(.[a-z]{2,4})?$/;
 
+    if (!formValue.user) {
+      error.user = "First Name is Required*";
+    }
     if (!formValue.email) {
-      error.email = "Email is Required";
+      error.email = "Email is Required*";
     } else if (!regex.test(formValue.email)) {
       error.email = "Enter a valid Email";
     }
 
     if (!formValue.password) {
-      error.password = "Password is Required";
+      error.password = "Password is Required*";
     } else if (formValue.password.length < 3) {
       error.password = "Password must be more than 3 characters*";
     } else if (formValue.password.length > 10) {
-      error.password = "Password must be less than 8 characters*";
+      error.password = "Password must be less than 10 characters*";
     }
     return error;
   };
 
 
-  // onChange=>
+  // onChange =>
   const handleChange = (e) => {
     let name, value;
     name = e.target.name
     value = e.target.value
-    
+
+    // user
+    if (name === "user") {
+      if (value.length === 0) {
+        setError({ ...error, user: "Firstname is Required*" });
+        setFormValue({ ...formValue, user: "" })
+      } else {
+        setError({ ...error, user: "" })
+        setFormValue({ ...formValue, user: value })
+      }
+    }
+
     // email
     if (name === "email") {
       if (value.length === 0) {
@@ -81,18 +96,21 @@ const SignUp = () => {
     setError(validation())
     if (Object.keys(ErrorList).length === 0) {
       let reg = {
+        user: formValue.user,
         email: formValue.email,
         password: formValue.password
       }
       dispatch(fetchSignUp(reg))
-      navigate('/')
-      alert("Successfully SignedUp !!!")
+      alert("Successfully Registered. Please Login to Continue !!")
+      setFormValue(initialState)
+      navigate('/signin')
     }
   }
 
   return (
     <div>
       <Banner string="New In Job Agency? " page="Join Now" />
+
       <section className="section" id="contact-us" style={{ "marginTop": "0" }}>
         <div className="container">
           <div className="row d-flex justify-content-center">
@@ -104,6 +122,21 @@ const SignUp = () => {
                 <form onSubmit={handleSubmit}>
                   <div className="row">
 
+                    {/* *****First name***** */}
+
+                    <div className="col-md-12 col-sm-12">
+                      <fieldset>
+                        <span className="text-danger">{error.user}</span>
+                        <input
+                          name="user"
+                          type="text"
+                          placeholder="Enter your first name*"
+                          value={formValue.user}
+                          onChange={handleChange}
+                        />
+                      </fieldset>
+                    </div>
+
                     {/* *****Email***** */}
 
                     <div className="col-md-12 col-sm-12">
@@ -114,7 +147,8 @@ const SignUp = () => {
                           type="email"
                           placeholder="Enter a valid email ID*"
                           value={formValue.email}
-                          onChange={handleChange} />
+                          onChange={handleChange}
+                        />
                       </fieldset>
                     </div>
 
@@ -128,13 +162,16 @@ const SignUp = () => {
                           type="password"
                           placeholder="Enter a password*"
                           value={formValue.password}
-                          onChange={handleChange} />
+                          onChange={handleChange}
+                        />
                       </fieldset>
                     </div>
 
                     <div className="col-lg-12 d-flex justify-content-center">
                       <fieldset>
-                        <button onClick={onButtonClick} className="main-button">Sign Up</button>
+                        <button
+                          onClick={onButtonClick}
+                          className="main-button">Sign Up</button>
                       </fieldset>
                     </div>
                   </div>

@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "user": "Surajit",
+      "email": "surajit@gmail.com",
+      "password": "surajit",
+      "id": 1
+    },
+    {
+      "user": "Poulami",
+      "email": "poulami@gmail.com",
+      "password": "poulami",
+      "id": 2
+    },
+    {
+      "user": "Chandan",
+      "email": "chandan@gamil.com",
+      "password": "c12345",
+      "id": 3
+    },
+    {
+      "user": "Paddi",
+      "email": "paddi@gmail.com",
+      "password": "123456",
+      "id": 4
+    },
+    {
+      "user": "Vabiji",
+      "email": "vabiji@hotmail.com",
+      "password": "123456",
+      "id": 5
+    }
+  ]
+}

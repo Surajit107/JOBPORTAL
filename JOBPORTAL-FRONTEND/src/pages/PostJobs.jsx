@@ -391,6 +391,7 @@ const PostJobs = () => {
       dispatch(fetchPostJobs(reg))
       navigate('/')
       alert("Data submitted successfully !!!")
+      setFormValue(initialState)
     }
   }
 

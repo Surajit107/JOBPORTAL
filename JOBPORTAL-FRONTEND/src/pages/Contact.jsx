@@ -119,6 +119,7 @@ const Contact = () => {
       dispatch(fetchContact(reg))
       navigate('/')
       alert("Thanks For Feedback :)")
+      setFormValue(initialState)
     }
   }
 
