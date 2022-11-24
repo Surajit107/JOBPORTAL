@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import Banner from '../components/common/banners/Banner'
 import { fetchSignIn } from '../redux/slice/AuthSlice'
