@@ -28,15 +28,17 @@ export const fetchSignIn = createAsyncThunk("users/signin", async ({ email, pass
     }
 })
 
+const initialState = {
+    user: null,
+    err: "",
+    msg: "",
+    token: false
+
+}
 
 const AuthSlice = createSlice({
     name: "authslice",
-    initialState: {
-        user: null,
-        err: "",
-        msg: "",
-        token: false
-    },
+    initialState,
     reducers: {
         setLogout(state) {
             state.token = false
