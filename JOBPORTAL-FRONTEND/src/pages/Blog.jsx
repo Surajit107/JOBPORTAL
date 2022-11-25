@@ -8,6 +8,7 @@ import { fetchAllBlogs } from '../redux/slice/BlogsSlice'
 const Blog = () => {
   const dispatch = useDispatch()
   const { blog_data, loading } = useSelector((state) => state.blogslice)
+  const { token } = useSelector((state) => state.authslice)
 
   useEffect(() => {
     dispatch(fetchAllBlogs())
@@ -38,7 +39,10 @@ const Blog = () => {
 
                         <p>{description}</p>
                         <div className="main-button">
-                          <Link to={`/blogdetails/${id}`}>Continue Reading</Link>
+                          {token ?
+                            <Link to={`/blogdetails/${id}`}>Continue Reading</Link> :
+                            <Link to="/signin">Continue Reading</Link>}
+
                         </div>
                       </article>
                       <br />

@@ -1,9 +1,7 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 const ReadOurTestimonials = () => {
-    const { token } = useSelector((state) => state.authslice)
     return (
         <div>
             {/* <!-- ***** Testimonials Item Start ***** --> */}
@@ -75,7 +73,7 @@ const ReadOurTestimonials = () => {
                     <br />
 
                     <div className="main-button text-center">
-                        {token ? <Link to="/testimonials">Read More</Link> : null}
+                        <Link to="/testimonials">Read More</Link>
                     </div>
                 </div>
             </section>

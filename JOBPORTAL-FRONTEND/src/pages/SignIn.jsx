@@ -13,7 +13,6 @@ const SignIn = () => {
   const [formValue, setFormValue] = useState(initialState)
   const dispatch = useDispatch()
   const navigate = useNavigate()
-  // const { token, err, msg } = useSelector((state) => state.authslice)
 
   const handleChange = (e) => {
     setFormValue({ ...formValue, [e.target.name]: e.target.value })
@@ -26,8 +25,6 @@ const SignIn = () => {
   const onButtonClick = () => {
     dispatch(fetchSignIn(formValue))
     setFormValue(initialState)
-    alert("Successfully Logged In !!")
-    // alert("Invalid Email or Password !!")
     navigate("/")
   }
 

@@ -21,26 +21,23 @@ const Navbar = () => {
                                 <ul className="nav">
 
                                     <li><Link to="/">Home</Link></li>
-                                    {token ?
-                                        <li><Link to="/jobs">Jobs</Link></li>
-                                        : null}
-                                    {token ?
-                                        <li className="dropdown">
-                                            <a className="dropdown-toggle" data-toggle="dropdown" href="!#" role="button"
-                                                aria-haspopup="true" aria-expanded="false">About</a>
 
-                                            <div className="dropdown-menu">
-                                                <Link className="dropdown-item" to="/about">About Us</Link>
-                                                <Link className="dropdown-item" to="/team">Team</Link>
-                                                <Link className="dropdown-item" to="/blog">Blog</Link>
-                                                <Link className="dropdown-item" to="/testimonials">Testimonials</Link>
-                                            </div>
-                                        </li>
-                                        : null}
+                                    <li><Link to="/jobs">Jobs</Link></li>
 
-                                    {token ?
-                                        <li><Link to="/postjobs">Post Jobs</Link></li>
-                                        : null}
+                                    <li className="dropdown">
+                                        <a className="dropdown-toggle" data-toggle="dropdown" href="!#" role="button"
+                                            aria-haspopup="true" aria-expanded="false">About</a>
+
+                                        <div className="dropdown-menu">
+                                            <Link className="dropdown-item" to="/about">About Us</Link>
+                                            <Link className="dropdown-item" to="/team">Team</Link>
+                                            <Link className="dropdown-item" to="/blog">Blog</Link>
+                                            <Link className="dropdown-item" to="/testimonials">Testimonials</Link>
+                                        </div>
+                                    </li>
+
+                                    <li><Link to="/postjobs">Post Jobs</Link></li>
+
                                     <li><Link to="/contact">Contact</Link></li>
                                     {token ?
                                         <li className="dropdown">
@@ -50,7 +47,7 @@ const Navbar = () => {
                                             </a>
 
                                             <div className="dropdown-menu">
-                                                <Link className="dropdown-item" onClick={()=>dispatch(setLogout()) }>Log Out</Link>
+                                                <Link className="dropdown-item" onClick={() => dispatch(setLogout())}>Log Out</Link>
                                             </div>
                                         </li>
                                         : null}

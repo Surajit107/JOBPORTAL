@@ -1,5 +1,5 @@
 import JobSingleBanner from "../../components/common/banners/JobSingleBanner";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchSingleJob } from "../../redux/slice/SingleJobSlice";
@@ -12,13 +12,13 @@ const JobSingle = () => {
   const { id } = useParams();
   const dispatch = useDispatch()
   const { single_job_data, loading } = useSelector((state) => state.singlejobslice)
-  const { title, company, city, status, date, vacancy, exp, salary_min,salary_max, gender, deadline, desc, resp, edu, others } = single_job_data;
+  const { title, company, city, status, date, vacancy, exp, salary_min, salary_max, gender, deadline, desc, resp, edu, others } = single_job_data;
+  const { token } = useSelector((state) => state.authslice)
 
   useEffect(() => {
     dispatch(fetchSingleJob(id))
   }, [dispatch, id]);
 
-  // console.log("Single data :", single_job_data);
 
   return (
     <div>
@@ -154,9 +154,14 @@ const JobSingle = () => {
                     </a>
                   </div>
                   <div className="col-6">
-                    <a href="#!" className="btn btn-block btn-primary btn-md">
-                      Apply Now
-                    </a>
+                    {token ?
+                      <a href="#!" className="btn btn-block btn-primary btn-md">
+                        Apply Now
+                      </a>
+                      : <Link to="/signin" className="btn btn-block btn-primary btn-md">
+                        Apply Now
+                      </Link>}
+
                   </div>
                 </div>
               </div>
@@ -185,7 +190,7 @@ const JobSingle = () => {
                     </li>
                     <li className="mb-2">
                       <strong className="text-black">Salary:</strong>
-                      {CURRENCY}{salary_min} - 
+                      {CURRENCY}{salary_min} -
                       {CURRENCY}{salary_max}
                     </li>
                     <li className="mb-2">

@@ -37,7 +37,7 @@ const ReadOurBlogs = () => {
                                 }).reverse().slice(0, 3)
                             }
                             <div className="main-rounded-button mt-2">
-                                {token ? <Link to="/blog">Read More</Link> : null}
+                                <Link to="/blog">Read More</Link>
                             </div>
                         </div>
                         <div className="col-lg-8">
@@ -55,7 +55,7 @@ const ReadOurBlogs = () => {
                                                 <div className="main-button">
                                                     {token ?
                                                         <Link to={`/blogdetails/${curElm.id}`}>Continue Reading</Link>
-                                                        : null}
+                                                        : <Link to="/signin">Continue Reading</Link>}
                                                 </div>
                                             </article>
                                         </section>

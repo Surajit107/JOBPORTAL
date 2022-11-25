@@ -19,12 +19,15 @@ export const fetchSignIn = createAsyncThunk("users/signin", async ({ email, pass
         let res = await axios.get(`${BASE_URL}:3004/users`)
         const user = res?.data?.filter(item => item.email === email && item.password === password)
         if (user.length) {
+            alert("Successfully Loged In !!")
             return user
+        } else {
+            alert("Invalid Email or Password !!")
         }
 
     } catch (error) {
         console.log(error);
-        alert("Invalid Email or Password !!")
+        alert("Something Went Wrong !!")
     }
 })
 
@@ -43,12 +46,16 @@ const AuthSlice = createSlice({
         setLogout(state) {
             state.token = false
             state.user = null
+            alert("Loged Out Successfully !!")
         }
     },
     extraReducers: (builder) => {
         // For SignIn
         builder.addCase(fetchSignIn.pending, (state) => {
-            state.msg = "Loading"
+            state.msg = "Loading..."
+        })
+        builder.addCase(fetchSignIn.rejected, (state) => {
+            state.err = "Invalid Email or Password !!"
         })
         builder.addCase(fetchSignIn.fulfilled, (state, { payload }) => {
             if (payload) {
@@ -57,20 +64,17 @@ const AuthSlice = createSlice({
                 state.msg = "Successfully Logged In !!"
             }
         })
-        builder.addCase(fetchSignIn.rejected, (state) => {
-            state.err = "Something Went Wrong !!"
-        })
 
 
         // For SignUp
         builder.addCase(fetchSignUp.pending, (state) => {
-            state.msg = "Loading"
-        })
-        builder.addCase(fetchSignUp.fulfilled, (state) => {
-            state.msg = "Successfully Registered. Please Login to Continue !!"
+            state.msg = "Loading..."
         })
         builder.addCase(fetchSignUp.rejected, (state) => {
             state.err = "Something Went Wrong !!"
+        })
+        builder.addCase(fetchSignUp.fulfilled, (state) => {
+            state.msg = "Successfully Registered. Please Login to Continue !!"
         })
     }
 })

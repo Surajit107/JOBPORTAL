@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import image from '../../../assets/images/company-name.png'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchAllJobs } from '../../../redux/slice/JobSlice'
 import ReactPaginate from 'react-paginate'
+import CardList from './CardList'
 
 
 const BannerAndCards = () => {
@@ -12,7 +12,6 @@ const BannerAndCards = () => {
     const [pageNumber, setPageNumber] = useState(0)
     const dispatch = useDispatch()
     const { fetch_job_data } = useSelector((state) => state.jobslice)
-    const { token } = useSelector((state) => state.authslice)
 
     useEffect(() => {
         dispatch(fetchAllJobs())
@@ -95,37 +94,11 @@ const BannerAndCards = () => {
                                     jobs.title.toLowerCase().includes(search.toLowerCase())
                                 )
                             })
-                            .map((curElm) => {
-                                const { title, company, city, status, id } = curElm
-                                return (
-                                    <li className="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center" key={id}>
-                                        {token ?
-                                            <Link to={`/jobsingle/${id}`} className='p-2'></Link>
-                                            : null}
-                                        <div className="job-listing-logo">
-                                            <script type="text/javascript" async=""
-                                                src="https://www.google-analytics.com/analytics.js">
-                                            </script>
-                                            <img
-                                                src={image}
-                                                alt="iamge"
-                                                className='mx-3' />
-                                        </div>
-                                        <div className="job-listing-about d-sm-flex custom-width w-100">
-                                            <div className="job-listing-position custom-width w-50 mb-3 mb-sm-0 ml-5">
-                                                <h2>{title}</h2>
-                                                <strong>{company}</strong>
-                                            </div>
-                                            <div className="job-listing-location pt-2 mb-3 mb-sm-0 custom-width w-25">
-                                                <span className="icon-room"></span> {city}
-                                            </div>
-                                            <div className="job-listing-meta pt-2">
-                                                <span className="badge badge-success">{status}</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                )
-                            })
+                                .map((curElm) => {
+                                    return (
+                                        <CardList curElm={curElm} key={curElm.id}/>
+                                    )
+                                })
                         }
 
                     </ul>
