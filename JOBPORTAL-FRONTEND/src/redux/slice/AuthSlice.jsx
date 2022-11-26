@@ -64,17 +64,6 @@ const AuthSlice = createSlice({
         setLogout(state) {
             state.token = false
             state.user = null
-            // alert('Loged Out Successfully 😊')
-            toast.success('Loged Out Successfully 😊', {
-                position: "top-center",
-                autoClose: 3000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "colored",
-            });
         }
     },
     extraReducers: (builder) => {
