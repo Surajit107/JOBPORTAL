@@ -1,9 +1,10 @@
 import React from 'react'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Banner from '../components/common/banners/Banner'
 import { fetchSignIn } from '../redux/slice/AuthSlice'
+import { ToastContainer } from 'react-toastify';
 
 const initialState = {
   email: "",
@@ -12,7 +13,6 @@ const initialState = {
 const SignIn = () => {
   const [formValue, setFormValue] = useState(initialState)
   const dispatch = useDispatch()
-  const navigate = useNavigate()
 
   const handleChange = (e) => {
     setFormValue({ ...formValue, [e.target.name]: e.target.value })
@@ -25,7 +25,6 @@ const SignIn = () => {
   const onButtonClick = () => {
     dispatch(fetchSignIn(formValue))
     setFormValue(initialState)
-    navigate("/")
   }
 
   return (
@@ -85,6 +84,7 @@ const SignIn = () => {
           </div>
         </div>
       </section>
+      <ToastContainer />
     </div>
   )
 }

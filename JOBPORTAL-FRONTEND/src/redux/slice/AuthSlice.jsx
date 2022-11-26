@@ -1,6 +1,8 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { BASE_URL } from "../../baseUrl/common";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // SignUp
 export const fetchSignUp = createAsyncThunk("users/signup", async (SignUpData) => {
@@ -8,7 +10,6 @@ export const fetchSignUp = createAsyncThunk("users/signup", async (SignUpData) =
         await axios.post(`${BASE_URL}:3004/users`, SignUpData)
     } catch (error) {
         console.log(error);
-        alert("Something Went Wrong !!")
     }
 })
 
@@ -19,15 +20,32 @@ export const fetchSignIn = createAsyncThunk("users/signin", async ({ email, pass
         let res = await axios.get(`${BASE_URL}:3004/users`)
         const user = res?.data?.filter(item => item.email === email && item.password === password)
         if (user.length) {
-            alert("Successfully Loged In !!")
-            return user
+            toast.success('Loged In Successfully 😊', {
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+            });
+            return user;
         } else {
-            alert("Invalid Email or Password !!")
+            toast.error('Invalid Email or Password 😟', {
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+            });
         }
 
     } catch (error) {
         console.log(error);
-        alert("Something Went Wrong !!")
     }
 })
 
@@ -46,7 +64,17 @@ const AuthSlice = createSlice({
         setLogout(state) {
             state.token = false
             state.user = null
-            alert("Loged Out Successfully !!")
+            // alert('Loged Out Successfully 😊')
+            toast.success('Loged Out Successfully 😊', {
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+            });
         }
     },
     extraReducers: (builder) => {

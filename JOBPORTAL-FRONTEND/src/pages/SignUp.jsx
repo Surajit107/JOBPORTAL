@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
 import Banner from '../components/common/banners/Banner'
 import { fetchSignUp } from '../redux/slice/AuthSlice'
+import { ToastContainer, toast } from 'react-toastify';
 
 const initialState = {
   user: "",
@@ -11,7 +11,6 @@ const initialState = {
 }
 
 const SignUp = () => {
-  const navigate = useNavigate()
   const dispatch = useDispatch()
   const [formValue, setFormValue] = useState(initialState)
   const [error, setError] = useState({})
@@ -101,9 +100,17 @@ const SignUp = () => {
         password: formValue.password
       }
       dispatch(fetchSignUp(reg))
-      alert("Successfully Registered. Please Login to Continue !!")
       setFormValue(initialState)
-      navigate('/signin')
+      toast.success('Successfully Registered. Please SignIn to Continue 😊', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
     }
   }
 
@@ -184,6 +191,7 @@ const SignUp = () => {
           </div>
         </div>
       </section>
+      <ToastContainer />
     </div>
   )
 }
