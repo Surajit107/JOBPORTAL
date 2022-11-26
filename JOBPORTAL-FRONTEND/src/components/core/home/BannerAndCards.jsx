@@ -17,7 +17,7 @@ const BannerAndCards = () => {
         dispatch(fetchAllJobs())
     }, [dispatch])
 
-    const userPerpage = 3
+    const userPerpage = 6
     const pagesVisited = pageNumber * userPerpage
     const jobData = fetch_job_data?.slice(pagesVisited, pagesVisited + userPerpage).reverse()
     const pageCount = Math.ceil(fetch_job_data?.length / userPerpage)
@@ -96,7 +96,7 @@ const BannerAndCards = () => {
                             })
                                 .map((curElm) => {
                                     return (
-                                        <CardList curElm={curElm} key={curElm.id}/>
+                                        <CardList curElm={curElm} key={curElm.id} />
                                     )
                                 })
                         }

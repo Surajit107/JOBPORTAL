@@ -191,6 +191,7 @@ const SignUp = () => {
           </div>
         </div>
       </section>
+      
       <ToastContainer />
     </div>
   )
