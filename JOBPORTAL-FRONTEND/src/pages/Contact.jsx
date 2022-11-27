@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
 import Banner from '../components/common/banners/Banner'
 import ContactInfo from '../components/core/contact/ContactInfo'
 import { fetchContact } from '../redux/slice/ContactSlice'
+import { ToastContainer, toast } from 'react-toastify'
 
 const initialState = {
   name: "",
@@ -13,7 +13,6 @@ const initialState = {
 }
 
 const Contact = () => {
-  const navigate = useNavigate()
   const dispatch = useDispatch()
   const [formValue, setFormValue] = useState(initialState)
   const [error, setError] = useState({});
@@ -104,7 +103,7 @@ const Contact = () => {
     e.preventDefault()
   }
 
-  
+
   // onClick=>
   const onButtonClick = () => {
     const ErrorList = validation()
@@ -117,9 +116,17 @@ const Contact = () => {
         message: formValue.message
       }
       dispatch(fetchContact(reg))
-      navigate('/')
-      alert("Thanks For Feedback :)")
       setFormValue(initialState)
+      toast.success("Thanks for your feedback 😊, we'll reach you soon!!", {
+        position: "top-center",
+        autoClose: 6000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
     }
   }
 
@@ -206,6 +213,7 @@ const Contact = () => {
         </div>
       </section>
       {/* <!-- ***** Contact Us Area Ends ***** --> */}
+      <ToastContainer />
     </div>
   )
 }

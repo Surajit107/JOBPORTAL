@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchSingleJob } from "../../redux/slice/SingleJobSlice";
 import PreLoader from "../../components/common/preloader/PreLoader";
 import { CURRENCY } from "../../baseUrl/common";
+import { ToastContainer, toast } from 'react-toastify';
 
 
 const JobSingle = () => {
@@ -14,6 +15,19 @@ const JobSingle = () => {
   const { single_job_data, loading } = useSelector((state) => state.singlejobslice)
   const { title, company, city, status, date, vacancy, exp, salary_min, salary_max, gender, deadline, desc, resp, edu, others } = single_job_data;
   const { token } = useSelector((state) => state.authslice)
+
+  const onApply = () => {
+    toast.success('Appied Successfully 😊', {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
+  }
 
   useEffect(() => {
     dispatch(fetchSingleJob(id))
@@ -71,7 +85,7 @@ const JobSingle = () => {
                     </a>
                   </div>
                   <div className="col-6">
-                    {token ? <a href="#!" className="btn btn-block btn-primary btn-md">
+                    {token ? <a href="#!" onClick={onApply} className="btn btn-block btn-primary btn-md">
                       Apply Now
                     </a> : <a href="\signin" className="btn btn-block btn-primary btn-md">
                       Apply Now
@@ -141,7 +155,7 @@ const JobSingle = () => {
                   </div>
                   <div className="col-6">
                     {token ?
-                      <a href="#!" className="btn btn-block btn-primary btn-md">
+                      <a href="#!" onClick={onApply} className="btn btn-block btn-primary btn-md">
                         Apply Now
                       </a>
                       : <Link to="/signin" className="btn btn-block btn-primary btn-md">
@@ -221,6 +235,7 @@ const JobSingle = () => {
         </section>
       )}
       {/* <!-- ***** Fleet Ends ***** --> */}
+      <ToastContainer />
     </div>
   );
 };

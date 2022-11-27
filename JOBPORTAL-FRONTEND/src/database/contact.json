@@ -8,32 +8,11 @@
       "id": 1
     },
     {
-      "name": "Debarathi Das",
-      "email": "debarathi@gamil.com",
-      "subject": "Test submit",
-      "message": "Test",
-      "id": 2
-    },
-    {
-      "name": "Tapas Paral",
-      "email": "tapas@gmail.com",
-      "subject": "Test 2 Subject",
-      "message": "Test 2",
-      "id": 3
-    },
-    {
       "name": "Chandan Halder",
       "email": "chandan@gamil.com",
       "subject": "Test submit",
       "message": "Test message",
-      "id": 4
-    },
-    {
-      "name": "Poulami Chowdhury",
-      "email": "poulami@gmail.com",
-      "subject": "Drawing",
-      "message": "I love Drawing",
-      "id": 5
+      "id": 2
     }
   ]
 }
