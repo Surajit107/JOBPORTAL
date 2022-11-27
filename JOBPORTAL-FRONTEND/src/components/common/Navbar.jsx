@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { setLogout } from '../../redux/slice/AuthSlice'
 
 const Navbar = () => {
-    const { user, token } = useSelector((state) => state.authslice)
+    const { user, token } = useSelector((state) => state?.authslice)
     const dispatch = useDispatch()
     return (
         <div>
@@ -35,9 +35,9 @@ const Navbar = () => {
                                             <Link className="dropdown-item" to="/testimonials">Testimonials</Link>
                                         </div>
                                     </li>
-
-                                    <li><Link to="/postjobs">Post Jobs</Link></li>
-
+                                    {user[0]?.type === "A" ?
+                                        <li > <Link to="/postjobs">Post Jobs</Link></li>
+                                         : null}
                                     <li><Link to="/contact">Contact</Link></li>
                                     {token ?
                                         <li className="dropdown">
@@ -66,9 +66,9 @@ const Navbar = () => {
                         </div>
                     </div>
                 </div>
-            </header>
+            </header >
             {/* <!-- ***** Header Area End ***** --> */}
-        </div>
+        </div >
     )
 }
 

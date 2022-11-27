@@ -7,7 +7,8 @@ import { ToastContainer, toast } from 'react-toastify';
 const initialState = {
   user: "",
   email: "",
-  password: ""
+  password: "",
+  type: "U"
 }
 
 const SignUp = () => {
@@ -77,7 +78,7 @@ const SignUp = () => {
         setFormValue({ ...formValue, password: "" })
       } else {
         setError({ ...error, password: "" })
-        setFormValue({ ...formValue, password: value })
+        setFormValue({ ...formValue, password: value, type: "U" })
       }
     }
   }
@@ -97,7 +98,8 @@ const SignUp = () => {
       let reg = {
         user: formValue.user,
         email: formValue.email,
-        password: formValue.password
+        password: formValue.password,
+        type: formValue.type
       }
       dispatch(fetchSignUp(reg))
       setFormValue(initialState)
@@ -191,7 +193,7 @@ const SignUp = () => {
           </div>
         </div>
       </section>
-      
+
       <ToastContainer />
     </div>
   )

@@ -4,13 +4,14 @@
       "user": "Surajit",
       "email": "surajit@gmail.com",
       "password": "surajit",
-      "type": "admin",
+      "type": "A",
       "id": 1
     },
     {
       "user": "Chandan",
       "email": "chandan@gamil.com",
       "password": "c12345",
+      "type": "U",
       "id": 2
     }
   ]

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { Link, useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import Banner from '../components/common/banners/Banner'
 import { fetchPostJobs } from '../redux/slice/PostJobSlice'
 
@@ -45,7 +45,6 @@ const PostJobs = () => {
   const dispatch = useDispatch()
   const [formValue, setFormValue] = useState(initialState)
   const [error, setError] = useState({});
-  const { token } = useSelector((state) => state.authslice)
 
   // Form Validation
   const validation = () => {
@@ -715,9 +714,7 @@ const PostJobs = () => {
 
                     <div className="col-lg-12">
                       <fieldset>
-                        {token ?
-                          <button onClick={onButtonClick} className="main-button">Submit</button>
-                          : <Link to="/admin" onClick={onButtonClick} className="main-button">Submit</Link>}
+                        <button onClick={onButtonClick} className="main-button">Submit</button>
                       </fieldset>
                     </div>
                   </div>

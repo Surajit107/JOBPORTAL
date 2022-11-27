@@ -50,45 +50,8 @@ export const fetchSignIn = createAsyncThunk("users/signin", async ({ email, pass
 })
 
 
-// Admin check
-export const fetchAdmin = createAsyncThunk("users/admin", async ({ email, password }) => {
-    try {
-        let res = await axios.get(`${BASE_URL}:3004/users`)
-        const user = res?.data?.filter(item => item.email === email && item.password === password)
-        if (user.length) {
-            if (user.type === "admin") {
-                toast.success('Welcome Admin 😊', {
-                    position: "top-center",
-                    autoClose: 3000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "colored",
-                });
-                return user;
-            } else {
-                toast.error('Sorry you are not an admin 😟', {
-                    position: "top-center",
-                    autoClose: 3000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "colored",
-                });
-            }
-        }
-    } catch (error) {
-        console.log(error);
-    }
-})
-
-
 const initialState = {
-    user: null,
+    user: [],
     err: "",
     msg: "",
     token: false
@@ -101,7 +64,7 @@ const AuthSlice = createSlice({
     reducers: {
         setLogout(state) {
             state.token = false
-            state.user = null
+            state.user = []
         }
     },
     extraReducers: (builder) => {
@@ -132,21 +95,6 @@ const AuthSlice = createSlice({
             state.msg = "Successfully Registered. Please Login to Continue !!"
         })
 
-
-        // For admin check
-        builder.addCase(fetchAdmin.pending, (state) => {
-            state.msg = "Loading..."
-        })
-        builder.addCase(fetchAdmin.rejected, (state) => {
-            state.msg = "Faild"
-        })
-        builder.addCase(fetchAdmin.fulfilled, (state, { payload }) => {
-            if (payload) {
-                state.token = true
-                state.user = payload
-                state.msg = "Welcome Admin !!"
-            }
-        })
     }
 })
 

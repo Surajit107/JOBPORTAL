@@ -22,8 +22,8 @@ const BannerAndCards = () => {
     const jobData = fetch_job_data?.slice(pagesVisited, pagesVisited + userPerpage).reverse()
     const pageCount = Math.ceil(fetch_job_data?.length / userPerpage)
 
-    const changePage = (data) => {
-        setPageNumber(data.selected)
+    const changePage = (curPage) => {
+        setPageNumber(curPage.selected)
     }
 
 
