@@ -129,17 +129,16 @@ const Contact = () => {
       <ContactInfo />
 
       {/* <!-- ***** Contact Us Area Starts ***** --> */}
-      <section className="section" id="contact-us" style={{ "marginTop": "0" }}>
+      <section className="section mb-5" id="contact-us" style={{ "marginTop": "0" }}>
         <div className="container-fluid">
           <div className="row">
             <div className="col-lg-6 col-md-6 col-xs-12">
               <div id="map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.103998600563!2d88.42524581460412!3d22.575213338564737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0275927b0061ad%3A0x496c2fab98874c86!2sWebskitters%20Technology%20Solutions%20Pvt.%20Ltd.!5e0!3m2!1sen!2sin!4v1668614059719!5m2!1sen!2sin" width="680" height="600" style={{ "border": "0" }} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade" title='map'></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.103998600563!2d88.42524581460412!3d22.575213338564737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0275927b0061ad%3A0x496c2fab98874c86!2sWebskitters%20Technology%20Solutions%20Pvt.%20Ltd.!5e0!3m2!1sen!2sin!4v1668614059719!5m2!1sen!2sin" width="673" height="519" style={{ "border": "0" }} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade" title='map'></iframe>
               </div>
             </div>
             <div className="col-lg-6 col-md-6 col-xs-12">
               <div className="contact-form section-bg" style={{ "backgroundImage": "url(assets/images/contact-1-720x480.jpg)" }}>
-
                 <form onSubmit={handleSubmit}>
                   <div className="row">
 
