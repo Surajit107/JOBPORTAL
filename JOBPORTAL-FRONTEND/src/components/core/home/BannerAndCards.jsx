@@ -39,7 +39,6 @@ const BannerAndCards = () => {
 
                 <div className="video-overlay header-text">
                     <div className="caption">
-                        <h6>Surajit's Job Portal</h6>
                         <h2>Find the perfect <em>Job</em></h2>
                         <div className="main-button mt-5">
                             <form className="search-jobs-form" onSubmit={(e) => e.preventDefault()}>
@@ -62,7 +61,7 @@ const BannerAndCards = () => {
                                 </div>
 
                             </form>
-                            <Link to="/contact">Contact Us</Link>
+                            <Link to="/jobs">Find Jobs</Link>
                         </div>
                     </div>
                 </div>

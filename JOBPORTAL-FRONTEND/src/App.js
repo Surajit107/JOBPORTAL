@@ -15,6 +15,7 @@ import JobDetails from "./pages/JobDetails";
 import JobSingle from "./pages/JobSingle/JobSingle";
 import BlogDetails from "./pages/BlogDetails";
 import SignIn from "./pages/SignIn";
+import Admin from "./pages/Admin";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/admin" element={<Admin />} />
         </Routes>
         <Footer />
       </Router>

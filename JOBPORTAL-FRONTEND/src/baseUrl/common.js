@@ -1,2 +1,2 @@
-export const BASE_URL = "http://192.168.123.7";
+export const BASE_URL = "http://localhost";
 export const CURRENCY = "₹";

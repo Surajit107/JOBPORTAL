@@ -32,14 +32,6 @@ const JobSingle = () => {
             <div className="row align-items-center mb-5">
               <div className="col-lg-8 mb-4 mb-lg-0">
                 <div className="d-flex align-items-center">
-                  <div className="border p-2 d-inline-block mr-3 rounded">
-                    <script
-                      type="text/javascript"
-                      async=""
-                      src="https://www.google-analytics.com/analytics.js"
-                    ></script>
-                    <img src="" alt="" data-pagespeed-url-hash="2859068494" />
-                  </div>
                   <div>
                     <h2>{title}</h2>
                     <div>
@@ -79,9 +71,11 @@ const JobSingle = () => {
                     </a>
                   </div>
                   <div className="col-6">
-                    <a href="#!" className="btn btn-block btn-primary btn-md">
+                    {token ? <a href="#!" className="btn btn-block btn-primary btn-md">
                       Apply Now
-                    </a>
+                    </a> : <a href="\signin" className="btn btn-block btn-primary btn-md">
+                      Apply Now
+                    </a>}
                   </div>
                 </div>
               </div>
@@ -89,14 +83,6 @@ const JobSingle = () => {
             <div className="row">
               <div className="col-lg-8">
                 <div className="mb-5">
-                  <figure className="mb-5">
-                    <img
-                      src="assets/images/xjob_single_img_1.jpg.pagespeed.ic.ur-TZf9Cst.webp"
-                      alt=""
-                      className="img-fluid rounded"
-                      data-pagespeed-url-hash="3581067019"
-                    />
-                  </figure>
                   <h3 className="h5 d-flex align-items-center mb-4 text-primary">
                     <span className="icon-align-left mr-3">
                       <i className="fa fa-align-left" aria-hidden="true"></i>
@@ -136,7 +122,7 @@ const JobSingle = () => {
                     <span className="icon-turned_in mr-3">
                       <i className="fa fa-cubes" aria-hidden="true"></i>
                     </span>
-                    Other Benifits
+                    Others
                   </h3>
                   <ul className="list-unstyled m-0 p-0">
                     <li className="d-flex align-items-start mb-2">

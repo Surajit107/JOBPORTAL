@@ -26,10 +26,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "json-server-jobs": "json-server --watch src/database/jobdata.json --host 192.168.123.7 --port 3001",
-    "json-server-blogs": "json-server --watch src/database/blogdata.json --host 192.168.123.7 --port 3002",
-    "json-server-contacts": "json-server --watch src/database/contact.json --host 192.168.123.7 --port 3003",
-    "json-server-signin": "json-server --watch src/database/signindata.json --host 192.168.123.7 --port 3004",
+    "json-server-jobs": "json-server --watch src/database/jobdata.json --host localhost --port 3001",
+    "json-server-blogs": "json-server --watch src/database/blogdata.json --host localhost --port 3002",
+    "json-server-contacts": "json-server --watch src/database/contact.json --host localhost --port 3003",
+    "json-server-signin": "json-server --watch src/database/signindata.json --host localhost --port 3004",
     "dev": "concurrently \"npm start\" \"npm run json-server-jobs\" \"npm run json-server-blogs\" \"npm run json-server-contacts\" \"npm run json-server-signin\""
   },
   "eslintConfig": {
