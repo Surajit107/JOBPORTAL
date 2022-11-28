@@ -15,7 +15,7 @@ const Navbar = () => {
                         <div className="col-12">
                             <nav className="main-nav">
                                 {/* <!-- ***** Logo Start ***** --> */}
-                                <Link to="/" className="logo">Job <em>Agency</em></Link>
+                                <Link to="/" className="logo">Job <em>Agency</em>.<em>Com</em></Link>
                                 {/* <!-- ***** Logo End ***** --> */}
                                 {/* <!-- ***** Menu Start ***** --> */}
                                 <ul className="nav">

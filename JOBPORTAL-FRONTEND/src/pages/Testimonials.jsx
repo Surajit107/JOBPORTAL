@@ -4,7 +4,7 @@ import Banner from '../components/common/banners/Banner'
 const Testimonials = () => {
   return (
     <div>
-      <Banner string="Read our" page="Testimonials"/>
+      <Banner string="Read our" page="Testimonials" />
 
       {/* <!-- ***** Testimonials Item Start ***** --> */}
       <section className="section" id="features">
@@ -20,8 +20,9 @@ const Testimonials = () => {
                     <img src="assets/images/features-first-icon.png" alt="First One" />
                   </div>
                   <div className="right-content">
-                    <h4>John Doe</h4>
-                    <p><em>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta numquam maxime voluptatibus, impedit sed! Necessitatibus repellendus sed deleniti id et!"</em></p>
+                    <h4>Surajit Pal</h4>
+                    <p><em>"It’s really really great information. Keep sharing, Thanks"</em>
+                    </p>
                   </div>
                 </li>
                 <li className="feature-item">
@@ -29,8 +30,9 @@ const Testimonials = () => {
                     <img src="assets/images/features-first-icon.png" alt="second one" />
                   </div>
                   <div className="right-content">
-                    <h4>John Doe</h4>
-                    <p><em>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta numquam maxime voluptatibus, impedit sed! Necessitatibus repellendus sed deleniti id et!"</em></p>
+                    <h4>Chandan Halder</h4>
+                    <p><em>"I read this post your post so nice and very informative post thanks for sharing this post"</em>
+                    </p>
                   </div>
                 </li>
               </ul>
@@ -42,8 +44,9 @@ const Testimonials = () => {
                     <img src="assets/images/features-first-icon.png" alt="fourth muscle" />
                   </div>
                   <div className="right-content">
-                    <h4>John Doe</h4>
-                    <p><em>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta numquam maxime voluptatibus, impedit sed! Necessitatibus repellendus sed deleniti id et!"</em></p>
+                    <h4>Debarati Das</h4>
+                    <p><em>"Useful post . It’s really really great information. Keep sharing, Thanks"</em>
+                    </p>
                   </div>
                 </li>
                 <li className="feature-item">
@@ -51,8 +54,9 @@ const Testimonials = () => {
                     <img src="assets/images/features-first-icon.png" alt="training fifth" />
                   </div>
                   <div className="right-content">
-                    <h4>John Doe</h4>
-                    <p><em>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta numquam maxime voluptatibus, impedit sed! Necessitatibus repellendus sed deleniti id et!"</em></p>
+                    <h4>Tapas Paral</h4>
+                    <p><em>"Relevance, Quality, Diversity, Volume, Consistency – thank you so much for these guidelines, I’ll always remember these when posting comments on blogs."</em>
+                    </p>
                   </div>
                 </li>
               </ul>

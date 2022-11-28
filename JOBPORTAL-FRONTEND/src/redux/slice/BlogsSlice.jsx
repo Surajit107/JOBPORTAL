@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { BASE_URL } from "../../baseUrl/common";
 
+// Blog Content
 export const fetchAllBlogs = createAsyncThunk("/blog", async () => {
     try {
         const res = await axios.get(`${BASE_URL}:3002/blog`)
@@ -23,6 +24,7 @@ export const BlogSlice = createSlice({
     initialState,
     reducers: {},
     extraReducers: (builder) => {
+        // Action for all Blogs
         builder.addCase(fetchAllBlogs.pending, (state) => {
             state.blog_status = "Loading..."
             state.loading = true

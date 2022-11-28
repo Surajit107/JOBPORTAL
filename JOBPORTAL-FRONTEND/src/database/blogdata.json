@@ -1,40 +1,43 @@
 {
   "blog": [
     {
-      "title": "Blog-1 Lorem ipsum dolor sit amet, consectetur adipisicing.",
-      "description": "Phasellus convallis mauris sed elementum vulputate. Donec posuere leo sed dui eleifend hendrerit. Sed suscipit suscipit erat, sed vehicula ligula. Aliquam ut sem fermentum sem tincidunt lacinia gravida aliquam nunc. Morbi quis erat imperdiet, molestie nunc ut, accumsan diam.",
-      "name": "Surajit Pal",
-      "date": "27.07.2020 10:10",
+      "title": "Hire A Web Development Agency | The Ultimate Guide",
+      "description": "A website gives your business an online presence, which is most needed in today’s technology-driven internet era.In today’s age, a business earns the trust and loyalty of its customers through its online presence. Before communicating with you, your customers will check out your website and gather information about your business. With approximately, more than five billion internet users worldwide, it becomes obligatory for businesses to get online. A website promises to create new doors of success and revenue for your business while establishing the credibility of your business in the market.Website development is an extensive process. From choosing the right technology stack, designing and developing to testing and maintenance, there are many steps involved in it. But, each of these steps can be a cakewalk if you’ve got experienced web developers by your side.A front-end developer handles the client-side development and takes care of how the visitors will navigate and interact with different pages of the website or web application. They are often assumed to do web designing. But, they actually do coding to give life to a website by using the layouts, graphics, visuals, etc. provided by the web designer.Front-end developers are responsible for making the website interactive as much as possible. They use technologies like HTML/CSS, JavaScript, SQL, Java, and Python to write the code. They are also responsible for enhancing the responsiveness, performance, loading speed, and other different client-side aspects of the website.",
+      "name": "Atanu Sarkar",
+      "date": "September 26, 2022",
       "cmnt_count": 15,
-      "comments": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta numquam maxime voluptatibus, impedit sed! Necessitatibus repellendus sed deleniti id et!",
+      "username":"Surajit Pal",
+      "comments": "It’s really really great information. Keep sharing, Thanks",
       "id": 1
     },
     {
-      "title": "Blog-2 Lorem ipsum dolor sit amet, consectetur adipisicing.",
-      "description": "Phasellus convallis mauris sed elementum vulputate. Donec posuere leo sed dui eleifend hendrerit. Sed suscipit suscipit erat, sed vehicula ligula. Aliquam ut sem fermentum sem tincidunt lacinia gravida aliquam nunc. Morbi quis erat imperdiet, molestie nunc ut, accumsan diam.",
-      "name": "Debarathi Das",
-      "date": "27.07.2020 10:10",
+      "title": "How to Outsource Web Development in 2022?",
+      "description": "Outsourcing is a widely prevalent practice worldwide that helps businesses save their valuable resources and time by assigning particular tasks to an external team.It is especially a convenient and cost-effective option for web development. Outsourcing is any day better than building an efficient internal team for developing a website or web application for your business. But, when it comes to web development outsourcing, many things concern business owners. How they can find a dependable partner? What are the risks and how they can ensure failsafe outsourcing of a project evading all the risks? All these come naturally to their mind when they decide to outsource.Making the right choice of an outsourcing partner is challenging! To simplify things for you, we have presented this extensive guide. Here, we have explained in detail the outsourcing of web development services and how to find the right partner. Read till the end to know.",
+      "name": "Ayan Sarkar",
+      "date": "September 29, 2022",
       "cmnt_count": 15,
-      "comments": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta numquam maxime voluptatibus, impedit sed! Necessitatibus repellendus sed deleniti id et!",
+      "username":"Chandan Halder",
+      "comments": "It’s really really great information. Keep sharing, Thanks",
       "id": 2
     },
     {
-      "title": "Blog-3 Lorem ipsum dolor sit amet, consectetur adipisicing.",
-      "description": "Phasellus convallis mauris sed elementum vulputate. Donec posuere leo sed dui eleifend hendrerit. Sed suscipit suscipit erat, sed vehicula ligula. Aliquam ut sem fermentum sem tincidunt lacinia gravida aliquam nunc. Morbi quis erat imperdiet, molestie nunc ut, accumsan diam.",
-      "name": "Tapas Paral",
-      "date": "27.07.2020 10:10",
+      "title": "The Future Of Content Management System – Updated 2022",
+      "description": "Internet nowadays has a wide range of impacts on the distribution of content throughout websites. While the volume of digital content in the world is rising at an exponential rate; these website content pieces are increasingly becoming vulnerable to theft, plagiarism, infringement of intellectual property rights, etc. It’s therefore crucial for webmasters to create, store and manage content in a systematic and secure way. Having a Content Management System (CMS) can get all these done easily.A CMS is a computer application enabling users to create, modify, collaborate on, publish, store or delete digital shreds of content that extract the stress of managing your content. With the aggressive growth of digital content creation over the last few years, website owners are realizing the inflating need for Content Management Platforms.But what does the future of CMS look like? Well, this comprehensive blog has elucidated it through a critical analysis. So, stay tuned and read the blog till the end.",
+      "name": "Atanu Sarkar",
+      "date": "August 29, 2022",
       "cmnt_count": 15,
-      "comments": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta numquam maxime voluptatibus, impedit sed! Necessitatibus repellendus sed deleniti id et!",
+      "username":"Debarathi Das",
+      "comments": "I read this post your post so nice and very informative post thanks for sharing this post",
       "id": 3
-    }
-    ,
+    },
     {
-      "title": "Blog-4 Lorem ipsum dolor sit amet, consectetur adipisicing.",
-      "description": "Phasellus convallis mauris sed elementum vulputate. Donec posuere leo sed dui eleifend hendrerit. Sed suscipit suscipit erat, sed vehicula ligula. Aliquam ut sem fermentum sem tincidunt lacinia gravida aliquam nunc. Morbi quis erat imperdiet, molestie nunc ut, accumsan diam.",
-      "name": "Tapas Paral",
-      "date": "27.07.2020 10:10",
+      "title": "How Artificial Intelligence Is Ruling Over The Dating Industry?",
+      "description": "Artificial Intelligence (AI) algorithms are a part of daily human experiences and are involved in more or less everything - forecasting the results of different activities, social interactions, online shopping, driving, etc. Valued at the US $4 billion, AI has started infiltrating the online dating industry. It’s one of the several ongoing disruptive tech innovations trying to change the lifestyle and make it easier.The other name of online dating now is “Algorithmic Matchmaking;” gamification of establishing a romantic connection with others. Can AI algorithms help people find love? Can they replace a human matchmaker and play the same role flawlessly? This article has explored these two questions from a deeper perspective and has found out how bright is dating apps’ future in a world of Artificial Intelligence.Keep reading to get the answers to these questions.",
+      "name": "Ayan Sarkar",
+      "date": "August 4, 2022",
       "cmnt_count": 15,
-      "comments": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta numquam maxime voluptatibus, impedit sed! Necessitatibus repellendus sed deleniti id et!",
+      "username":"Tapas Paral",
+      "comments": "It’s really really great information. Keep sharing, Thanks",
       "id": 4
     }
   ]

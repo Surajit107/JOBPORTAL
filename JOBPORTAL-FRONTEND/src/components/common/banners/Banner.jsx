@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Banner = ({ string, page }) => {
+const Banner = ({ string, page, text }) => {
     return (
         <div>
             <section className="section section-bg" id="call-to-action" style={{ "backgroundImage": "url(assets/images/banner-image-1-1920x500.jpg)" }}>
@@ -11,7 +11,7 @@ const Banner = ({ string, page }) => {
                                 <br />
                                 <br />
                                 <h2>{string} <em>{page}</em></h2>
-                                <p>Ut consectetur, metus sit amet aliquet placerat, enim est ultricies ligula</p>
+                                <p>{text}</p>
                             </div>
                         </div>
                     </div>

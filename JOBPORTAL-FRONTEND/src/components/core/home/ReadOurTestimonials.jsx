@@ -12,8 +12,7 @@ const ReadOurTestimonials = () => {
                             <div className="section-heading">
                                 <h2>Read our <em>Testimonials</em></h2>
                                 <img src="assets/images/line-dec.png" alt="waves" />
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem incidunt alias minima
-                                    tenetur nemo necessitatibus?</p>
+                                <p>With our decade-long experience in software development and digital marketing, wehave garnered an excellent reputation and have covered several milestones inthe market.</p>
                             </div>
                         </div>
                         <div className="col-lg-6">
@@ -23,9 +22,8 @@ const ReadOurTestimonials = () => {
                                         <img src="assets/images/features-first-icon.png" alt="First One" />
                                     </div>
                                     <div className="right-content">
-                                        <h4>John Doe</h4>
-                                        <p><em>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta numquam maxime
-                                            voluptatibus, impedit sed! Necessitatibus repellendus sed deleniti id et!"</em>
+                                        <h4>Surajit Pal</h4>
+                                        <p><em>"It’s really really great information. Keep sharing, Thanks"</em>
                                         </p>
                                     </div>
                                 </li>
@@ -34,9 +32,8 @@ const ReadOurTestimonials = () => {
                                         <img src="assets/images/features-first-icon.png" alt="second one" />
                                     </div>
                                     <div className="right-content">
-                                        <h4>John Doe</h4>
-                                        <p><em>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta numquam maxime
-                                            voluptatibus, impedit sed! Necessitatibus repellendus sed deleniti id et!"</em>
+                                        <h4>Chandan Halder</h4>
+                                        <p><em>"I read this post your post so nice and very informative post thanks for sharing this post"</em>
                                         </p>
                                     </div>
                                 </li>
@@ -49,9 +46,8 @@ const ReadOurTestimonials = () => {
                                         <img src="assets/images/features-first-icon.png" alt="fourth muscle" />
                                     </div>
                                     <div className="right-content">
-                                        <h4>John Doe</h4>
-                                        <p><em>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta numquam maxime
-                                            voluptatibus, impedit sed! Necessitatibus repellendus sed deleniti id et!"</em>
+                                        <h4>Debarati Das</h4>
+                                        <p><em>"Useful post . It’s really really great information. Keep sharing, Thanks"</em>
                                         </p>
                                     </div>
                                 </li>
@@ -60,9 +56,8 @@ const ReadOurTestimonials = () => {
                                         <img src="assets/images/features-first-icon.png" alt="training fifth" />
                                     </div>
                                     <div className="right-content">
-                                        <h4>John Doe</h4>
-                                        <p><em>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta numquam maxime
-                                            voluptatibus, impedit sed! Necessitatibus repellendus sed deleniti id et!"</em>
+                                        <h4>Tapas Paral</h4>
+                                        <p><em>"Relevance, Quality, Diversity, Volume, Consistency – thank you so much for these guidelines, I’ll always remember these when posting comments on blogs."</em>
                                         </p>
                                     </div>
                                 </li>

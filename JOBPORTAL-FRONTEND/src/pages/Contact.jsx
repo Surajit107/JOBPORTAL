@@ -132,7 +132,10 @@ const Contact = () => {
 
   return (
     <div>
-      <Banner string="Feel free to" page="Contact Us" />
+      <Banner
+        string="Feel free to"
+        page="Contact Us"
+        text="We offer you a free consultation about your projects. We are ready to serve you round-the-clock and encourage you to discuss your requirements and queries." />
       <ContactInfo />
 
       {/* <!-- ***** Contact Us Area Starts ***** --> */}

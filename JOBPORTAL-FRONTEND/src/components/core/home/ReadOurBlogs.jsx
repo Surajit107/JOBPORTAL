@@ -20,8 +20,7 @@ const ReadOurBlogs = () => {
                             <div className="section-heading">
                                 <h2>Read our <em>Blog</em></h2>
                                 <img src="assets/images/line-dec.png" alt="" />
-                                <p>Nunc urna sem, laoreet ut metus id, aliquet consequat magna. Sed viverra ipsum dolor,
-                                    ultricies fermentum massa consequat eu.</p>
+                                <p>Stay informed with the latest technology development. Keep yourself informed and updated with our blogs. Know the details about modern digital strategies. Shape your digital solutions with exclusive information.</p>
                             </div>
                         </div>
                     </div>
