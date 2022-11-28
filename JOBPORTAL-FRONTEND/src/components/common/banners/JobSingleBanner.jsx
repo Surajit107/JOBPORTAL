@@ -12,7 +12,7 @@ const JobSingleBanner = ({ title }) => {
                                 <br />
                                 <br />
                                 <h2>{title}</h2>
-                                <p>Ut consectetur, metus sit amet aliquet placerat, enim est ultricies ligula</p>
+                                <p>Find the right job or internship for you</p>
                             </div>
                         </div>
                     </div>
