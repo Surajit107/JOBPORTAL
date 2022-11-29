@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import Banner from '../components/common/banners/Banner'
 import PreLoader from '../components/common/preloader/PreLoader'
 import { fetchSingleJob } from '../redux/slice/SingleJobSlice'
+import { ToastContainer, toast } from 'react-toastify';
 import image from '../assets/images/job-image-1-1200x600.jpg'
 
 const JobDetails = () => {
@@ -12,6 +13,19 @@ const JobDetails = () => {
     const dispatch = useDispatch()
     const { single_job_data, loading } = useSelector((state) => state.singlejobslice)
     const { desc, about, name, email, phone, website, title, city } = single_job_data
+    const { token } = useSelector((state) => state.authslice)
+    const onApply = () => {
+        toast.success('Appied Successfully 😊', {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+        });
+    }
 
     useEffect(() => {
         dispatch(fetchSingleJob(id))
@@ -109,10 +123,20 @@ const JobDetails = () => {
                                     </div>
                                 </article>
                             </section>
+                            <div className="col-6" style={{"width" : "150px"}}>
+                                {token ?
+                                    <Link to="#!" onClick={onApply} className="btn btn-block btn-primary btn-md">
+                                        Apply Now </Link>
+                                    :
+                                    <Link to="/signin" className="btn btn-block btn-primary btn-md">
+                                        Apply Now
+                                    </Link>}
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
+            <ToastContainer />
         </div>
     )
 }

@@ -85,11 +85,13 @@ const JobSingle = () => {
                     </a>
                   </div>
                   <div className="col-6">
-                    {token ? <a href="#!" onClick={onApply} className="btn btn-block btn-primary btn-md">
-                      Apply Now
-                    </a> : <a href="\signin" className="btn btn-block btn-primary btn-md">
-                      Apply Now
-                    </a>}
+                    {token ?
+                      <Link to="#!" onClick={onApply} className="btn btn-block btn-primary btn-md">
+                        Apply Now </Link>
+                      :
+                      <Link to="/signin" className="btn btn-block btn-primary btn-md">
+                        Apply Now
+                      </Link>}
                   </div>
                 </div>
               </div>
@@ -155,13 +157,12 @@ const JobSingle = () => {
                   </div>
                   <div className="col-6">
                     {token ?
-                      <a href="#!" onClick={onApply} className="btn btn-block btn-primary btn-md">
+                      <Link to="#!" onClick={onApply} className="btn btn-block btn-primary btn-md">
                         Apply Now
-                      </a>
+                      </Link>
                       : <Link to="/signin" className="btn btn-block btn-primary btn-md">
                         Apply Now
                       </Link>}
-
                   </div>
                 </div>
               </div>
