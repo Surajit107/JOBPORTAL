@@ -36,11 +36,11 @@ const SignIn = () => {
           <div className="row d-flex justify-content-center">
             <div className="col-lg-6 col-md-6 col-xs-6">
               <div className="contact-form">
-                <form onSubmit={handleSubmit}>
+                <form className='shadow p-3 mb-5 bg-body rounded' onSubmit={handleSubmit}>
 
                   {/* *****Email***** */}
 
-                  <div className="row">
+                  <div className="row my-3">
                     <div className="col-md-12 col-sm-12">
                       <fieldset>
                         <input
@@ -68,8 +68,8 @@ const SignIn = () => {
                     <div className="col-lg-12 d-flex justify-content-center">
                       <fieldset className='d-flex justify-content-center flex-column'>
                         <button
-                          className="main-button ml-5"
-                          style={{ "width": "100px" }}
+                          className="main-button"
+                          style={{ width: "100px" , marginLeft : "50px" }}
                           onClick={onButtonClick}
                         >Sign In</button>
 

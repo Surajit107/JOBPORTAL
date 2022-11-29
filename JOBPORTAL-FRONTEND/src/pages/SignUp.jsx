@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux'
 import Banner from '../components/common/banners/Banner'
 import { fetchSignUp } from '../redux/slice/AuthSlice'
 import { ToastContainer, toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
 
 const initialState = {
   user: "",
@@ -128,8 +129,8 @@ const SignUp = () => {
 
                 {/* ******From Start****** */}
 
-                <form onSubmit={handleSubmit}>
-                  <div className="row">
+                <form className='shadow p-3 mb-5 bg-body' onSubmit={handleSubmit}>
+                  <div className="row my-2">
 
                     {/* *****First name***** */}
 
@@ -177,10 +178,12 @@ const SignUp = () => {
                     </div>
 
                     <div className="col-lg-12 d-flex justify-content-center">
-                      <fieldset>
+                      <fieldset className='d-flex justify-content-center flex-column'>
                         <button
                           onClick={onButtonClick}
+                          style={{ width: "100px" , marginLeft : "70px"}}
                           className="main-button">Sign Up</button>
+                        <Link to="/signin" className='text-center mt-3'><u>Already Have An Account? Sign In</u></Link>
                       </fieldset>
                     </div>
                   </div>

@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { fetchAllJobs } from '../../../redux/slice/JobSlice'
 import ReactPaginate from 'react-paginate'
 import CardList from './CardList'
+import { HashLink } from 'react-router-hash-link'
 
 
 const BannerAndCards = () => {
@@ -54,9 +55,9 @@ const BannerAndCards = () => {
                                         />
                                     </div>
                                     <div>
-                                        <a href='#jobs-container' className="btn btn-primary btn-lg btn-block text-white btn-search"
+                                        <HashLink smooth to='/#jobs-container' className="btn btn-primary btn-lg btn-block text-white btn-search"
                                             style={{ "width": "5vw", "marginLeft": "80px" }}><span
-                                                className=" mr-2"><i className="fa fa-search" aria-hidden="true"></i></span></a>
+                                                className=" mr-2"><i className="fa fa-search" aria-hidden="true"></i></span></HashLink>
                                     </div>
                                 </div>
 
