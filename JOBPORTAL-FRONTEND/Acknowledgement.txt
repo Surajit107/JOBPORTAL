@@ -1,0 +1,22 @@
+Industrial training is the phase of the activity during our study in which weexpected to expand my creative thinking ability and to get the training of how to workin   the   industry   and   how   all   works   are   undertaken   in   the   industry.   It   was   a   great pleasure working on Online Job Portal.
+The   presentation of this report gives us a feeling   of   fulfillment.   The activity of goingthrough   industrial   orientation   has   bridged   the   gap   between   the   academics   andpractical real life work for us. It has prepared us to apply our self better to becomegood   developers.   Normally,   it   requires   a   lot   of   people   support   to   complete   thisopportunity to acknowledge their support for me.
+We are thankful to our instructor "Mr. Raju Kayal"  for guiding us throughout the project development. We would also like to thank to my team members who have given their precious time to us and help us a lot in this project.
+We have been able to prepare our report successfully and we acknowledge aspecial thanks to all those people without whose support it was impossible for us tomake the project report.
+
+
+AIM OF THE PROJECT :=>
+The aim of this project is to develops an online search Portal. The system is an online application that can be
+accessed throughout the organization and outside as well with proper login
+provided. This system can be used as an Online Job Portal.
+Candidate's logging should be able to upload their information.
+Visitors/Company representatives logging in may also access/search any
+information.
+The project has been planned to be having the view of distributed
+architecture, with centralized storage of the database. The application for the
+storage of the data has been planned. Using the JSON Server and
+all the user interfaces have been designed using the React JS. The
+standards of security and data protective mechanism have been given a big choice
+for proper usage. The application takes care of different modules and their
+associated reports, which are produced as per the applicable strategies and
+standards that are put forwarded by the administrative staff.
+
