@@ -1,8 +1,7 @@
 import JobSingleBanner from "../../components/common/banners/JobSingleBanner";
 import { Link, useParams } from "react-router-dom";
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchSingleJob } from "../../redux/slice/SingleJobSlice";
+import React from "react";
+import { useSelector } from "react-redux";
 import PreLoader from "../../components/common/preloader/PreLoader";
 import { CURRENCY } from "../../baseUrl/common";
 import { ToastContainer, toast } from 'react-toastify';
@@ -10,10 +9,9 @@ import { ToastContainer, toast } from 'react-toastify';
 
 const JobSingle = () => {
 
-  const { id } = useParams();
-  const dispatch = useDispatch()
-  const { single_job_data, loading } = useSelector((state) => state.singlejobslice)
-  const { title, company, city, status, date, vacancy, exp, salary_min, salary_max, gender, deadline, desc, resp, edu, others } = single_job_data;
+  const { js_id } = useParams();
+  const { fetch_job_data, loading } = useSelector((state) => state?.jobslice)
+  const jobSingle = fetch_job_data?.filter((item) => item.id === js_id)
   const { token } = useSelector((state) => state.authslice)
 
   const onApply = () => {
@@ -29,31 +27,28 @@ const JobSingle = () => {
     });
   }
 
-  useEffect(() => {
-    dispatch(fetchSingleJob(id))
-  }, [dispatch, id]);
 
 
   return (
     <div>
       {loading && <PreLoader />}
-      <JobSingleBanner title={title} />
+      <JobSingleBanner title={jobSingle[0]?.title} />
 
       {/* <!-- ***** Fleet Ends ***** --> */}
-      {single_job_data && (
+      {jobSingle && (
         <section className="site-section">
           <div className="container">
             <div className="row align-items-center mb-5">
               <div className="col-lg-8 mb-4 mb-lg-0">
                 <div className="d-flex align-items-center">
                   <div>
-                    <h2>{title}</h2>
+                    <h2>{jobSingle[0]?.title}</h2>
                     <div>
                       <span className="ml-0 mr-2 mb-2">
                         <span className="mr-2">
                           <i className="fa fa-briefcase" aria-hidden="true"></i>
                         </span>
-                        {company}
+                        {jobSingle[0]?.company}
                       </span>
                       <span className="m-2">
                         <span className="mr-2">
@@ -62,13 +57,13 @@ const JobSingle = () => {
                             aria-hidden="true"
                           ></i>
                         </span>
-                        {city}
+                        {jobSingle[0]?.city}
                       </span>
                       <span className="m-2">
                         <span className=" mr-2">
                           <i className="fa fa-clock-o" aria-hidden="true"></i>
                         </span>
-                        <span className="text-primary">{status}</span>
+                        <span className="text-primary">{jobSingle[0]?.status}</span>
                       </span>
                     </div>
                   </div>
@@ -105,7 +100,7 @@ const JobSingle = () => {
                     </span>
                     Job Description
                   </h3>
-                  <p>{desc}</p>
+                  <p>{jobSingle[0]?.desc}</p>
                 </div>
                 <div className="mb-5">
                   <h3 className="h5 d-flex align-items-center mb-4 text-primary">
@@ -116,7 +111,7 @@ const JobSingle = () => {
                   </h3>
                   <ul className="list-unstyled m-0 p-0">
                     <li className="d-flex align-items-start mb-2">
-                      <span>{resp}</span>
+                      <span>{jobSingle[0]?.resp}</span>
                     </li>
                   </ul>
                 </div>
@@ -129,7 +124,7 @@ const JobSingle = () => {
                   </h3>
                   <ul className="list-unstyled m-0 p-0">
                     <li className="d-flex align-items-start mb-2">
-                      <span>{edu}</span>
+                      <span>{jobSingle[0]?.edu}</span>
                     </li>
                   </ul>
                 </div>
@@ -142,7 +137,7 @@ const JobSingle = () => {
                   </h3>
                   <ul className="list-unstyled m-0 p-0">
                     <li className="d-flex align-items-start mb-2">
-                      <span>{others}</span>
+                      <span>{jobSingle[0]?.others}</span>
                     </li>
                   </ul>
                 </div>
@@ -174,34 +169,34 @@ const JobSingle = () => {
                   <ul className="list-unstyled pl-3 mb-0">
                     <li className="mb-2">
                       <strong className="text-black">Published on:</strong>{" "}
-                      {date}
+                      {jobSingle[0]?.date}
                     </li>
                     <li className="mb-2">
-                      <strong className="text-black">Vacancy:</strong> {vacancy}
+                      <strong className="text-black">Vacancy:</strong> {jobSingle[0]?.vacancy}
                     </li>
                     <li className="mb-2">
                       <strong className="text-black">Employment Status:</strong>{" "}
-                      {status}
+                      {jobSingle[0]?.status}
                     </li>
                     <li className="mb-2">
-                      <strong className="text-black">Experience:</strong> {exp}
+                      <strong className="text-black">Experience:</strong> {jobSingle[0]?.exp}
                     </li>
                     <li className="mb-2">
-                      <strong className="text-black">Job Location:</strong> {city}
+                      <strong className="text-black">Job Location:</strong> {jobSingle[0]?.city}
                     </li>
                     <li className="mb-2">
                       <strong className="text-black">Salary:</strong>
-                      {CURRENCY}{salary_min} -
-                      {CURRENCY}{salary_max}
+                      {CURRENCY}{jobSingle[0]?.salary_min} -
+                      {CURRENCY}{jobSingle[0]?.salary_max}
                     </li>
                     <li className="mb-2">
-                      <strong className="text-black">Gender:</strong> {gender}
+                      <strong className="text-black">Gender:</strong> {jobSingle[0]?.gender}
                     </li>
                     <li className="mb-2">
                       <strong className="text-black">
                         Application Deadline:
                       </strong>{" "}
-                      {deadline}
+                      {jobSingle[0]?.deadline}
                     </li>
                   </ul>
                 </div>

@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
 import Banner from '../components/common/banners/Banner'
 import { fetchPostJobs } from '../redux/slice/PostJobSlice'
+import { ToastContainer, toast } from 'react-toastify';
 
 // Custom Month Format
 const monthNames = ["January", "February", "March", "April", "May", "June",
@@ -41,7 +41,6 @@ const initialState = {
 }
 
 const PostJobs = () => {
-  const navigate = useNavigate()
   const dispatch = useDispatch()
   const [formValue, setFormValue] = useState(initialState)
   const [error, setError] = useState({});
@@ -390,8 +389,16 @@ const PostJobs = () => {
       }
       dispatch(fetchPostJobs(reg))
       setFormValue(initialState)
-      alert("Data submitted successfully !!!")
-      navigate('/')
+      toast.success('Data submitted successfully !!! 😊', {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
     }
   }
 
@@ -727,6 +734,8 @@ const PostJobs = () => {
           </div>
         </div>
       </section>
+
+      <ToastContainer />
     </div>
   )
 }

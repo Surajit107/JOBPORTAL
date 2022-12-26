@@ -23,7 +23,7 @@
       "resp": "Back Office - Other , BPO / Call Centre ,Customer Success, Service & Operations , Full Time, Permanent",
       "edu": "Any Graduate , Any Postgraduate",
       "others": "computer operator, Data Entrytyping work from home, Laptopdata management, android data processing, contant writing part time off line marketing home based english typing Data Entry Operation internet",
-      "id": 1
+      "id": "1"
     },
     {
       "title": "PHP WEB DEVELOPERS",
@@ -48,7 +48,7 @@
       "resp": "Back End Developer , Software Development",
       "edu": "B.Tech/B.E. in Computers, Post Graduation Not Required",
       "others": "jQuery ,Linux ,Database design, web , MySQL, Javascript, CMS, PHP, JSON, Information technology, tools, Ajax",
-      "id": 2
+      "id": "2"
     },
     {
       "title": "Manager - Supply Chain",
@@ -73,7 +73,7 @@
       "resp": "Responsible for Production Planning & Control activities for plant, improve the planning systems, S&OP, Demand Management.Responsible for Purchasing of TE and Non-TE Components. Drive his team with regular review and coaching to ensure 100% on time material availability to meet customer demand, Inventory Management, supplier management.Overall manages inbound & outbound logistics, deliver on freight cost control targets, liaison with freight forwarders & CHA s for smooth operation. Warehouse management, ensuring stock integrity, EHS compliance and efficiency improvement within warehouse Ensuring local and international trade compliance.Responsible for SCM metrics such as OTD, ITR etc.",
       "edu": "BE/ B.Tech (Mechanical, Production),PG in SC desirable.Knowledge of SAP, MS Office, ISO, IATFExperience in managing import & export transactional supply chain",
       "others": "Team Management is essential Managing Supply Chain key processes  Warehouse Management SAP MM/PP Sof Skills – Good Analytical Skills, Drive for results, leading team",
-      "id": 3
+      "id": "3"
     },
     {
       "title": "DOT NET FULLSTACK DEVELOPER",
@@ -98,7 +98,7 @@
       "resp": "Software Development",
       "edu": "Any Graduate",
       "others": "Dot Net, C#, SQL Query, Entity framework, Web API",
-      "id": 4
+      "id": "4"
     },
     {
       "title": "Database Lead Engineer - Python at Kantar",
@@ -123,7 +123,7 @@
       "resp": "Work on multiple concurrent development projects ,Participate in requirements gathering, database design, testing and production deployments. ,Analyse system/application requirements and design innovative solutions.Translating business requirements to technical specifications data streams, data integrations, data transformations, databases, data warehouses & data validation rules.",
       "edu": "Graduate(BE/B.Tech)/Masters(ME/M.Tech/MS) in Computer Science or equivalent from a premier institute (preferably NIT) with total experience of 6+ years and 3 - 4 years of experience on any cloud platform.",
       "others": "Provides training to the team members.,Develop and assist team members.Create technical documentation.Perform unit and integration testing.",
-      "id": 5
+      "id": "5"
     },
     {
       "title": "Cloud Platform & Storage SME",
@@ -148,7 +148,7 @@
       "resp": "Server hardware, Storage Arrays , Cloud Platform (VMWare, Citrix)",
       "edu": "Any Graduate",
       "others": "Expertise and hands on in cloud platform ,Understanding and hands on in VMWare platform",
-      "id": 6
+      "id": "6"
     },
     {
       "title": "VLSI Opportunities- Samsung",
@@ -173,7 +173,7 @@
       "resp": "ASIC / RTL / Logic Design Engineer",
       "edu": "B.Tech/B.E. in Any Specialization",
       "others": "Analog Design,timing-analysis,Standard Cell",
-      "id": 7
+      "id": "7"
     },
     {
       "title": "Support Engineer- Amazon is hiring For skilled developer(Any coding)",
@@ -198,7 +198,31 @@
       "resp": "The Support Engineer I role requires the candidate to work in a full time capacity and create tools/automation to support program and operations teams, Understand high-level technical aspects of existing systems and services.Develop standalone tools using Java, Python, Selenium frameworks to aid operations and maintenance.Work on maintenance driven coding projects, primarily in Perl or shell scripts, web technologies etc. Provide support for incoming tickets, including extensive troubleshooting tasks.",
       "edu": "UG -Any Graduate, PG - Any Postgraduate",
       "others": "technical support Program Development Software Support programming",
-      "id": 8
+      "id": "8"
+    },
+    {
+      "title": "Frontend",
+      "category_1": "MERN",
+      "category_2": "Backend",
+      "company": "Webskitter's Academy ",
+      "city": "Kolkata",
+      "status": "Part Time",
+      "name": "Surajit Pal",
+      "phone": "7198797987",
+      "email": "surajit@gmail.com",
+      "vacancy": "15",
+      "exp": "1 - 2 Years",
+      "salary_min": "15000",
+      "salary_max": "25000",
+      "gender": "Any",
+      "deadline": "03-Dec.-2022",
+      "website": "https://www.webskitters.com/",
+      "about": "fsdfsf",
+      "desc": "fsdfsd",
+      "resp": "dfssdfd",
+      "edu": "dsfsdf",
+      "others": "sdfsdf",
+      "id": "9"
     }
   ]
 }

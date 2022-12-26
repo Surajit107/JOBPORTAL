@@ -21,7 +21,6 @@ const Jobs = () => {
   const pageCount = Math.ceil(fetch_job_data.length / userPerpage)
 
   const changePage = (data) => {
-    // console.log(data);
     setPageNumber(data.selected)
   }
 

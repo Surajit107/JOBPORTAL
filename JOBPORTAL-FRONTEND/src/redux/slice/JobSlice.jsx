@@ -6,7 +6,6 @@ import { BASE_URL } from "../../baseUrl/common";
 export const fetchAllJobs = createAsyncThunk("/jobs", async () => {
     try {
         const res = await axios.get(`${BASE_URL}:3001/jobs`)
-        // console.log(res?.data);
         return res?.data
     } catch (error) {
         console.log(error);

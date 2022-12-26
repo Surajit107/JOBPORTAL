@@ -23,13 +23,13 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/jobsingle/:id" element={<JobSingle />} />
+          <Route path="/jobsingle/:js_id" element={<JobSingle />} />
           <Route path="/jobs" element={<Jobs />} />
-          <Route path="/jobdetails/:id" element={<JobDetails />} />
+          <Route path="/jobdetails/:jd_id" element={<JobDetails />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/team" element={<Team />} />
           <Route path="/blog" element={<Blog />} />
-          <Route path="/blogdetails/:id" element={<BlogDetails />} />
+          <Route path="/blogdetails/:bid" element={<BlogDetails />} />
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/postjobs" element={<PostJobs />} />
           <Route path="/contact" element={<Contact />} />
