@@ -13,6 +13,13 @@
       "password": "c12345",
       "type": "U",
       "id": 2
+    },
+    {
+      "user": "Poulami",
+      "email": "poulami@gmail.com",
+      "password": "poulami",
+      "type": "U",
+      "id": 3
     }
   ]
 }

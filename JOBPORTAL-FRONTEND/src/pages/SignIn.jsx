@@ -1,16 +1,18 @@
 import React from 'react'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Banner from '../components/common/banners/Banner'
 import { fetchSignIn } from '../redux/slice/AuthSlice'
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const initialState = {
   email: "",
   password: ""
 }
 const SignIn = () => {
+  const navigate = useNavigate()
   const [formValue, setFormValue] = useState(initialState)
   const dispatch = useDispatch()
 
@@ -23,7 +25,7 @@ const SignIn = () => {
   }
 
   const onButtonClick = () => {
-    dispatch(fetchSignIn(formValue))
+    dispatch(fetchSignIn({ formValue, navigate, toast }))
     setFormValue(initialState)
   }
 
@@ -69,7 +71,7 @@ const SignIn = () => {
                       <fieldset className='d-flex justify-content-center flex-column'>
                         <button
                           className="main-button"
-                          style={{ width: "100px" , marginLeft : "50px" }}
+                          style={{ width: "100px", marginLeft: "50px" }}
                           onClick={onButtonClick}
                         >Sign In</button>
 
@@ -84,7 +86,7 @@ const SignIn = () => {
           </div>
         </div>
       </section>
-      
+
       <ToastContainer />
     </div>
   )

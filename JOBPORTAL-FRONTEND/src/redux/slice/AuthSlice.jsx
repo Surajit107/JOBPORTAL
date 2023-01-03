@@ -1,47 +1,37 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { BASE_URL } from "../../baseUrl/common";
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 // SignUp
-export const fetchSignUp = createAsyncThunk("users/signup", async (SignUpData) => {
+export const fetchSignUp = createAsyncThunk("users/signup", async (SignupData) => {
     try {
-        await axios.post(`${BASE_URL}:3004/users`, SignUpData)
+        await axios.post(`${BASE_URL}:3004/users`, SignupData)
+        const { navigate } = SignupData
+        alert('Successfully Registered. Please SignIn to Continue 😊')
+        // toast.success('Successfully Registered. Please SignIn to Continue 😊');
+        navigate('/signin')
     } catch (error) {
+        const { toast } = SignupData
         console.log(error);
+        toast.success('Successfully Registered. Please SignIn to Continue 😊');
     }
 })
 
 
 // SignIn
-export const fetchSignIn = createAsyncThunk("users/signin", async ({ email, password }) => {
+export const fetchSignIn = createAsyncThunk("users/signin", async ({ formValue, navigate, toast }) => {
     try {
         let res = await axios.get(`${BASE_URL}:3004/users`)
+        const { email, password } = formValue
         const user = res?.data?.filter(item => item.email === email && item.password === password)
         if (user.length) {
-            toast.success('Loged In Successfully 😊', {
-                position: "top-center",
-                autoClose: 3000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "colored",
-            });
+            alert('Loged In Successfully 😊')
+            // toast.success('Loged In Successfully 😊');
+            navigate('/')
             return user;
         } else {
-            toast.error('Invalid Email or Password 😟', {
-                position: "top-center",
-                autoClose: 3000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "colored",
-            });
+            alert('Invalid Email or Password 😟')
+            // toast.error('Invalid Email or Password 😟');
         }
 
     } catch (error) {
