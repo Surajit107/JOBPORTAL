@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { CURRENCY } from "../../baseUrl/common";
-import image from "../../assets/images/blog-image-2-940x460.jpg"
+import { CURRENCY } from "../../../baseUrl/common";
+import image from "../../../assets/images/blog-image-2-940x460.jpg"
 
 const JobCard = (props) => {
   const { title, salary_min, category_1, category_2, id } = props;

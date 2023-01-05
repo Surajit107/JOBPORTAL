@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Footer from "./components/common/Footer";
 import Navbar from "./components/common/Navbar";
 import Home from "./pages/Home";
-import Jobs from "./pages/Jobs/Jobs";
+import Jobs from "./pages/Jobs";
 import AboutUs from "./pages/AboutUs";
 import Team from "./pages/Team";
 import Blog from "./pages/Blog";
@@ -11,9 +11,9 @@ import Testimonials from "./pages/Testimonials";
 import PostJobs from "./pages/PostJobs";
 import Contact from "./pages/Contact";
 import SignUp from "./pages/SignUp";
-import JobDetails from "./pages/JobDetails";
-import JobSingle from "./pages/JobSingle/JobSingle";
-import BlogDetails from "./pages/BlogDetails";
+import JobDetails from "./components/core/Job/JobDetails";
+import JobSingle from "./components/core/Job/JobSingle";
+import BlogDetails from "./components/core/Blog/BlogDetails";
 import SignIn from "./pages/SignIn";
 
 function App() {

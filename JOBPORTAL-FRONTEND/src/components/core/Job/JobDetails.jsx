@@ -1,10 +1,10 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { Link, useParams } from 'react-router-dom'
-import Banner from '../components/common/banners/Banner'
-import PreLoader from '../components/common/preloader/PreLoader'
+import Banner from '../../common/banners/Banner'
+import PreLoader from '../../common/preloader/PreLoader'
 import { ToastContainer, toast } from 'react-toastify';
-import image from '../assets/images/job-image-1-1200x600.jpg'
+import image from '../../../assets/images/job-image-1-1200x600.jpg'
 
 const JobDetails = () => {
 

@@ -1,9 +1,9 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
-import Banner from '../components/common/banners/Banner'
-import PreLoader from '../components/common/preloader/PreLoader'
-import image from '../assets/images/features-first-icon.png'
+import image from '../../../assets/images/features-first-icon.png'
+import Banner from '../../common/banners/Banner'
+import PreLoader from '../../common/preloader/PreLoader'
 
 const BlogDetails = () => {
     const { bid } = useParams()

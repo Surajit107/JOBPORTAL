@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import JobCard from "./JobCard";
-import Banner from "../../components/common/banners/Banner";
+import JobCard from "../components/core/Job/JobCard";
+import Banner from "../components/common/banners/Banner";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchAllJobs } from "../../redux/slice/JobSlice";
+import { fetchAllJobs } from "../redux/slice/JobSlice";
 import ReactPaginate from 'react-paginate';
 
 

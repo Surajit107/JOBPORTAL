@@ -1,9 +1,9 @@
-import JobSingleBanner from "../../components/common/banners/JobSingleBanner";
+import JobSingleBanner from "../../common/banners/JobSingleBanner";
 import { Link, useParams } from "react-router-dom";
 import React from "react";
 import { useSelector } from "react-redux";
-import PreLoader from "../../components/common/preloader/PreLoader";
-import { CURRENCY } from "../../baseUrl/common";
+import PreLoader from "../../common/preloader/PreLoader";
+import { CURRENCY } from "../../../baseUrl/common";
 import { ToastContainer, toast } from 'react-toastify';
 
 
