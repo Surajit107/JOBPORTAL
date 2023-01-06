@@ -55,6 +55,7 @@ const AuthSlice = createSlice({
         setLogout(state) {
             state.token = false
             state.user = []
+            window.localStorage.setItem("token", false)
         }
     },
     extraReducers: (builder) => {
@@ -62,15 +63,16 @@ const AuthSlice = createSlice({
         builder.addCase(fetchSignIn.pending, (state) => {
             state.msg = "Loading..."
         })
-        builder.addCase(fetchSignIn.rejected, (state) => {
-            state.err = "Invalid Email or Password !!"
-        })
         builder.addCase(fetchSignIn.fulfilled, (state, { payload }) => {
             if (payload) {
                 state.token = true
                 state.user = payload
                 state.msg = "Successfully Logged In !!"
+                window.localStorage.setItem("token", true)
             }
+        })
+        builder.addCase(fetchSignIn.rejected, (state) => {
+            state.err = "Invalid Email or Password !!"
         })
 
 
@@ -78,11 +80,11 @@ const AuthSlice = createSlice({
         builder.addCase(fetchSignUp.pending, (state) => {
             state.msg = "Loading..."
         })
-        builder.addCase(fetchSignUp.rejected, (state) => {
-            state.err = "Something Went Wrong !!"
-        })
         builder.addCase(fetchSignUp.fulfilled, (state) => {
             state.msg = "Successfully Registered. Please Login to Continue !!"
+        })
+        builder.addCase(fetchSignUp.rejected, (state) => {
+            state.err = "Something Went Wrong !!"
         })
 
     }

@@ -13,6 +13,7 @@ const BannerAndCards = () => {
     const [pageNumber, setPageNumber] = useState(0)
     const dispatch = useDispatch()
     const { fetch_job_data } = useSelector((state) => state.jobslice)
+    window.localStorage.setItem("data" , JSON.stringify(fetch_job_data))
 
     useEffect(() => {
         dispatch(fetchAllJobs())
@@ -35,7 +36,7 @@ const BannerAndCards = () => {
 
             <div className="main-banner" id="top">
                 <video autoPlay muted loop id="bg-video">
-                    <source src="assets/images/video.mp4" type="video/mp4" />
+                    <source src="/assets/images/video.mp4" type="video/mp4" />
                 </video>
 
                 <div className="video-overlay header-text">

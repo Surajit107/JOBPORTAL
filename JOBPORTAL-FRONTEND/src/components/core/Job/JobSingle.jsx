@@ -10,8 +10,9 @@ import { ToastContainer, toast } from 'react-toastify';
 const JobSingle = () => {
 
   const { js_id } = useParams();
-  const { fetch_job_data, loading } = useSelector((state) => state?.jobslice)
-  const jobSingle = fetch_job_data?.filter((item) => item.id === js_id)
+  const { loading } = useSelector((state) => state?.jobslice)
+  const jobData = JSON.parse(window.localStorage.getItem("data"))
+  const jobSingle = jobData?.filter((item) => item.id === js_id)
   const { token } = useSelector((state) => state.authslice)
 
   const onApply = () => {

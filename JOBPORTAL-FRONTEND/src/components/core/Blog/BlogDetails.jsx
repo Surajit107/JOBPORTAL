@@ -27,7 +27,7 @@ const BlogDetails = () => {
 
                             <p><i className="fa fa-user"></i> {singleBlog[0]?.name} &nbsp;|&nbsp; <i className="fa fa-calendar"></i> {singleBlog[0]?.date} &nbsp;|&nbsp; <i className="fa fa-comments"></i>  {singleBlog[0]?.cmnt_count} comments</p>
 
-                            <div><img src="assets/images/blog-image-fullscren-1-1920x700.jpg" alt="" /></div>
+                            <div><img src="/assets/images/blog-image-fullscren-1-1920x700.jpg" alt="" /></div>
 
                             <br />
 

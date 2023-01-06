@@ -9,8 +9,9 @@ import image from '../../../assets/images/job-image-1-1200x600.jpg'
 const JobDetails = () => {
 
     const { jd_id } = useParams()
-    const { fetch_job_data, loading } = useSelector((state) => state?.jobslice)
-    const singleJob = fetch_job_data?.filter((item) => item.id === jd_id)
+    const { loading } = useSelector((state) => state?.jobslice)
+    const jobData = JSON.parse(window.localStorage.getItem("data"))
+    const singleJob = jobData?.filter((item) => item.id === jd_id)
     const { token } = useSelector((state) => state.authslice)
     const onApply = () => {
         toast.success('Appied Successfully 😊', {
