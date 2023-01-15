@@ -19,6 +19,7 @@ const BannerAndCards = () => {
         dispatch(fetchAllJobs())
     }, [dispatch])
 
+    // Pagination setup
     const userPerpage = 6
     const pagesVisited = pageNumber * userPerpage
     const jobData = fetch_job_data?.slice(pagesVisited, pagesVisited + userPerpage).reverse()

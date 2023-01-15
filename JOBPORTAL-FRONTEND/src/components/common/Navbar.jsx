@@ -1,11 +1,21 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { Link, useNavigate } from 'react-router-dom'
 import { setLogout } from '../../redux/slice/AuthSlice'
 
 const Navbar = () => {
-    const { user, token } = useSelector((state) => state?.authslice)
+    const navigate = useNavigate()
+    const user = JSON.parse(window.localStorage.getItem("user"))
+    const token = JSON.parse(window.localStorage.getItem("token"))
+    const userType = JSON.parse(window.localStorage.getItem("userType"))
     const dispatch = useDispatch()
+    
+    // Logout Function
+    const doLogOut = () => {
+        dispatch(setLogout())
+        navigate('/')
+    }
+
     return (
         <div>
             {/* <!-- ***** Header Area Start ***** --> */}
@@ -35,20 +45,22 @@ const Navbar = () => {
                                             <Link className="dropdown-item" to="/testimonials">Testimonials</Link>
                                         </div>
                                     </li>
-                                    {user[0]?.type === "A" ?
+                                    {userType === "A" ?
                                         <li > <Link to="/postjobs">Post Jobs</Link></li>
-                                         : null}
+                                        : null}
                                     <li><Link to="/contact">Contact</Link></li>
+
                                     {token ?
                                         <li className="dropdown">
                                             <a className="dropdown-toggle" data-toggle="dropdown" href="!#" role="button"
                                                 aria-haspopup="true" aria-expanded="false"><i className="fa fa-user mr-2"></i>
-                                                {user[0].user}
+                                                {user === null || user}
                                             </a>
 
                                             <div className="dropdown-menu">
-                                                <Link className="dropdown-item" onClick={() => dispatch(setLogout())}>Log Out</Link>
+                                                <Link className="dropdown-item" onClick={doLogOut}>Log Out</Link>
                                             </div>
+
                                         </li>
                                         : null}
                                     {!token ?

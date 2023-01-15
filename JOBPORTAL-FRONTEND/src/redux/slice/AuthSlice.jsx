@@ -27,6 +27,9 @@ export const fetchSignIn = createAsyncThunk("users/signin", async ({ formValue, 
         if (user.length) {
             alert('Loged In Successfully 😊')
             // toast.success('Loged In Successfully 😊');
+            window.localStorage.setItem("token", JSON.stringify(true))
+            window.localStorage.setItem("user", JSON.stringify(user[0]?.user))
+            window.localStorage.setItem("userType", JSON.stringify(user[0]?.type))
             navigate('/')
             return user;
         } else {
@@ -43,8 +46,7 @@ export const fetchSignIn = createAsyncThunk("users/signin", async ({ formValue, 
 const initialState = {
     user: [],
     err: "",
-    msg: "",
-    token: false
+    msg: ""
 
 }
 
@@ -53,9 +55,11 @@ const AuthSlice = createSlice({
     initialState,
     reducers: {
         setLogout(state) {
-            state.token = false
             state.user = []
+            state.msg = "Successfully Logged Out !!"
             window.localStorage.setItem("token", false)
+            window.localStorage.removeItem("user")
+            window.localStorage.removeItem("userType")
         }
     },
     extraReducers: (builder) => {
@@ -65,10 +69,8 @@ const AuthSlice = createSlice({
         })
         builder.addCase(fetchSignIn.fulfilled, (state, { payload }) => {
             if (payload) {
-                state.token = true
                 state.user = payload
                 state.msg = "Successfully Logged In !!"
-                window.localStorage.setItem("token", true)
             }
         })
         builder.addCase(fetchSignIn.rejected, (state) => {

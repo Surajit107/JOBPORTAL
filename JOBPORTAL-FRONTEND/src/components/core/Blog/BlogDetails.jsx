@@ -7,10 +7,10 @@ import PreLoader from '../../common/preloader/PreLoader'
 
 const BlogDetails = () => {
     const { bid } = useParams()
-    const { blog_data, loading } = useSelector((state) => state?.blogslice)
+    const { loading } = useSelector((state) => state?.blogslice)
+    const blog_data = JSON.parse(window.localStorage.getItem("blogData"))
     const singleBlog = blog_data?.filter((item) => item.id === bid)
 
-    
     return (
         <div>
             {loading && <PreLoader />}

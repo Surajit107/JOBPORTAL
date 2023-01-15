@@ -13,7 +13,7 @@ const JobSingle = () => {
   const { loading } = useSelector((state) => state?.jobslice)
   const jobData = JSON.parse(window.localStorage.getItem("data"))
   const jobSingle = jobData?.filter((item) => item.id === js_id)
-  const { token } = useSelector((state) => state.authslice)
+  const token = JSON.parse(window.localStorage.getItem("token"))
 
   const onApply = () => {
     toast.success('Appied Successfully 😊', {

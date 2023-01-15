@@ -12,7 +12,9 @@ const JobDetails = () => {
     const { loading } = useSelector((state) => state?.jobslice)
     const jobData = JSON.parse(window.localStorage.getItem("data"))
     const singleJob = jobData?.filter((item) => item.id === jd_id)
-    const { token } = useSelector((state) => state.authslice)
+    const token = JSON.parse(window.localStorage.getItem("token"))
+
+    // Apply Button func
     const onApply = () => {
         toast.success('Appied Successfully 😊', {
             position: "top-center",
