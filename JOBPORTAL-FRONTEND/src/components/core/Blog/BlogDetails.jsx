@@ -1,4 +1,5 @@
 import React from 'react'
+import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import image from '../../../assets/images/features-first-icon.png'
@@ -10,6 +11,10 @@ const BlogDetails = () => {
     const { loading } = useSelector((state) => state?.blogslice)
     const blog_data = JSON.parse(window.localStorage.getItem("blogData"))
     const singleBlog = blog_data?.filter((item) => item.id === bid)
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
     return (
         <div>

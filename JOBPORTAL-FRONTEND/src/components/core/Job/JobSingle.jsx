@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import PreLoader from "../../common/preloader/PreLoader";
 import { CURRENCY } from "../../../baseUrl/common";
 import { ToastContainer, toast } from 'react-toastify';
+import { useEffect } from "react";
 
 
 const JobSingle = () => {
@@ -28,7 +29,9 @@ const JobSingle = () => {
     });
   }
 
-
+  useEffect(() => {
+    window.scrollTo(0, 0)
+}, [])
 
   return (
     <div>

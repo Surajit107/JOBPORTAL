@@ -8,9 +8,11 @@ const JobCard = (props) => {
   return (
     <div className="col-md-4 mt-4">
       <div className="trainer-item">
-        <div className="image-thumb">
-          <img src={image} alt={title} />
-        </div>
+        <Link to={`/jobdetails/${id}`}>
+          <div className="image-thumb">
+            <img src={image} alt={title} />
+          </div>
+        </Link>
         <div className="down-content">
           <span>{CURRENCY}{salary_min}</span>
 

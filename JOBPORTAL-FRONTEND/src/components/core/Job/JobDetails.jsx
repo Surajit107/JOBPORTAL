@@ -5,6 +5,7 @@ import Banner from '../../common/banners/Banner'
 import PreLoader from '../../common/preloader/PreLoader'
 import { ToastContainer, toast } from 'react-toastify';
 import image from '../../../assets/images/job-image-1-1200x600.jpg'
+import { useEffect } from 'react'
 
 const JobDetails = () => {
 
@@ -27,6 +28,10 @@ const JobDetails = () => {
             theme: "colored",
         });
     }
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
     return (
         <div>

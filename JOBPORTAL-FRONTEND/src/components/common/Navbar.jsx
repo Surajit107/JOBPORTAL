@@ -54,7 +54,7 @@ const Navbar = () => {
                                         <li className="dropdown">
                                             <a className="dropdown-toggle" data-toggle="dropdown" href="!#" role="button"
                                                 aria-haspopup="true" aria-expanded="false"><i className="fa fa-user mr-2"></i>
-                                                {user === null || user}
+                                                {user}
                                             </a>
 
                                             <div className="dropdown-menu">
