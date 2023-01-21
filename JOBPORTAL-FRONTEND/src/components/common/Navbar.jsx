@@ -58,7 +58,7 @@ const Navbar = () => {
                                             </a>
 
                                             <div className="dropdown-menu">
-                                                <Link className="dropdown-item" onClick={doLogOut}>Log Out</Link>
+                                                <Link className="dropdown-item" onClick={doLogOut} to="/">Log Out</Link>
                                             </div>
 
                                         </li>
