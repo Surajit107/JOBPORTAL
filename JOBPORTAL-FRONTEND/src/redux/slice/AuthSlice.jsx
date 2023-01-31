@@ -6,14 +6,11 @@ import { BASE_URL } from "../../baseUrl/common";
 export const fetchSignUp = createAsyncThunk("users/signup", async (SignupData) => {
     try {
         await axios.post(`${BASE_URL}:3004/users`, SignupData)
-        const { navigate } = SignupData
-        alert('Successfully Registered. Please SignIn to Continue 😊')
-        // toast.success('Successfully Registered. Please SignIn to Continue 😊');
+        const { navigate, toast } = SignupData
+        toast.success('Successfully Registered. Please SignIn to Continue 😊');
         navigate('/signin')
     } catch (error) {
-        const { toast } = SignupData
         console.log(error);
-        toast.success('Successfully Registered. Please SignIn to Continue 😊');
     }
 })
 
@@ -25,16 +22,14 @@ export const fetchSignIn = createAsyncThunk("users/signin", async ({ formValue, 
         const { email, password } = formValue
         const user = res?.data?.filter(item => item.email === email && item.password === password)
         if (user.length) {
-            alert('Loged In Successfully 😊')
-            // toast.success('Loged In Successfully 😊');
+            toast.success('Loged In Successfully 😊');
             window.localStorage.setItem("token", JSON.stringify(true))
             window.localStorage.setItem("user", JSON.stringify(user[0]?.user))
             window.localStorage.setItem("userType", JSON.stringify(user[0]?.type))
             navigate('/')
             return user;
         } else {
-            alert('Invalid Email or Password 😟')
-            // toast.error('Invalid Email or Password 😟');
+            toast.error('Invalid Email or Password 😟');
         }
 
     } catch (error) {

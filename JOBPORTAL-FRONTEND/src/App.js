@@ -15,6 +15,9 @@ import JobDetails from "./components/core/Job/JobDetails";
 import JobSingle from "./components/core/Job/JobSingle";
 import BlogDetails from "./components/core/Blog/BlogDetails";
 import SignIn from "./pages/SignIn";
+import PrivateRoute from "./privateRoute/PrivateRoute";
+import { ToastContainer, Flip } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -31,13 +34,16 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/blogdetails/:bid" element={<BlogDetails />} />
           <Route path="/testimonials" element={<Testimonials />} />
-          <Route path="/postjobs" element={<PostJobs />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route element={<PrivateRoute />}>
+            <Route path="/postjobs" element={<PostJobs />} />
+          </Route>
         </Routes>
         <Footer />
       </Router>
+      <ToastContainer transition={Flip} theme="colored"/>
     </div>
   );
 }

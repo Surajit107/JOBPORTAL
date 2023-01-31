@@ -4,7 +4,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import PreLoader from "../../common/preloader/PreLoader";
 import { CURRENCY } from "../../../baseUrl/common";
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import { useEffect } from "react";
 
 
@@ -17,21 +17,12 @@ const JobSingle = () => {
   const token = JSON.parse(window.localStorage.getItem("token"))
 
   const onApply = () => {
-    toast.success('Appied Successfully 😊', {
-      position: "top-center",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "colored",
-    });
+    toast.info('Appied Successfully 👍🏻')
   }
 
   useEffect(() => {
     window.scrollTo(0, 0)
-}, [])
+  }, [])
 
   return (
     <div>
@@ -235,7 +226,6 @@ const JobSingle = () => {
         </section>
       )}
       {/* <!-- ***** Fleet Ends ***** --> */}
-      <ToastContainer />
     </div>
   );
 };

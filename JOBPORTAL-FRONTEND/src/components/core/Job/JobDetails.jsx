@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { Link, useParams } from 'react-router-dom'
 import Banner from '../../common/banners/Banner'
 import PreLoader from '../../common/preloader/PreLoader'
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import image from '../../../assets/images/job-image-1-1200x600.jpg'
 import { useEffect } from 'react'
 
@@ -17,16 +17,7 @@ const JobDetails = () => {
 
     // Apply Button func
     const onApply = () => {
-        toast.success('Appied Successfully 😊', {
-            position: "top-center",
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "colored",
-        });
+        toast.info('Appied Successfully 👍🏻')
     }
 
     useEffect(() => {
@@ -138,7 +129,6 @@ const JobDetails = () => {
                     </div>
                 </div>
             </section>
-            <ToastContainer />
         </div>
     )
 }

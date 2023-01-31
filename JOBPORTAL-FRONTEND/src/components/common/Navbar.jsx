@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
 import { setLogout } from '../../redux/slice/AuthSlice'
 
 const Navbar = () => {
@@ -9,10 +10,11 @@ const Navbar = () => {
     const token = JSON.parse(window.localStorage.getItem("token"))
     const userType = JSON.parse(window.localStorage.getItem("userType"))
     const dispatch = useDispatch()
-    
+
     // Logout Function
     const doLogOut = () => {
         dispatch(setLogout())
+        toast.success('🙋🏻‍♂️,Loged Out Successfully')
         navigate('/')
     }
 
@@ -53,8 +55,9 @@ const Navbar = () => {
                                     {token ?
                                         <li className="dropdown">
                                             <a className="dropdown-toggle" data-toggle="dropdown" href="!#" role="button"
-                                                aria-haspopup="true" aria-expanded="false"><i className="fa fa-user mr-2"></i>
+                                                aria-haspopup="true" aria-expanded="false">
                                                 {user}
+                                                <i className="fa fa-user mx-2"></i>
                                             </a>
 
                                             <div className="dropdown-menu">

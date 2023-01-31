@@ -2,8 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import Banner from '../components/common/banners/Banner'
 import { fetchSignUp } from '../redux/slice/AuthSlice'
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 import { Link, useNavigate } from 'react-router-dom';
 
 const initialState = {
@@ -175,7 +174,7 @@ const SignUp = () => {
                       <fieldset className='d-flex justify-content-center flex-column'>
                         <button
                           onClick={onButtonClick}
-                          style={{ width: "100px" , marginLeft : "70px"}}
+                          style={{ width: "100px", marginLeft: "70px" }}
                           className="main-button">Sign Up</button>
                         <Link to="/signin" className='text-center mt-3'><u>Already Have An Account? Sign In</u></Link>
                       </fieldset>
@@ -191,7 +190,6 @@ const SignUp = () => {
         </div>
       </section>
 
-      <ToastContainer />
     </div>
   )
 }

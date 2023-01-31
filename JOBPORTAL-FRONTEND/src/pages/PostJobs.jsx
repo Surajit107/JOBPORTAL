@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import Banner from '../components/common/banners/Banner'
 import { fetchPostJobs } from '../redux/slice/PostJobSlice'
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 // Custom Month Format
 const monthNames = ["January", "February", "March", "April", "May", "June",
@@ -735,7 +735,6 @@ const PostJobs = () => {
         </div>
       </section>
 
-      <ToastContainer />
     </div>
   )
 }
